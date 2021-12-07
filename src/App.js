@@ -1,12 +1,18 @@
 import Home from './components/Home/Home';
 import Header from './components/Header/Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <Header />
+
+      < Router >
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+        </Routes>
+      </Router >
 
 
       {/* -Use React, Node.js, Express, and MongoDB

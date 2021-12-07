@@ -1,0 +1,11 @@
+.header{
+  background-color: black;
+  height: 80px;
+}
+
+.white__logo{
+  margin-top: 27px;
+  margin-left: 20px;
+  opacity: 0.3;
+  width: 30px;
+}
