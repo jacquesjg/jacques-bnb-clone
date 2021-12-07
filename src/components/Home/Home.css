@@ -1,0 +1,13 @@
+.homtest{
+  display: flex;
+  flex-direction: column;
+}
+
+.home{
+  background-image: url("../Images/african_treehouse.jpeg");
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
