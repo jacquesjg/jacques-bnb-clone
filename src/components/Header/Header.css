@@ -1,11 +1,65 @@
 .header{
-  background-color: black;
   height: 80px;
+  width: 100vw;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .white__logo{
   margin-top: 27px;
   margin-left: 20px;
-  opacity: 0.3;
+  opacity: 0.8;
   width: 30px;
+  height: 30px;
+}
+
+.links__container {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  opacity: 0.95;
+
+}
+
+a {
+  color: white;
+  font-size: 1.25 rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  height: 80px;
+}
+
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100px;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+
+}
+
+.nav__links li:hover {
+  border-bottom: 2px solid white;
+
+}
+
+.nav__links li:last-child {
+  margin-right: 0px;
 }
