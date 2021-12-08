@@ -14,5 +14,10 @@
   min-height: 100vh;
   background-size: cover;
   background-position: center;
+
+  /* for Searchbox.js alignment */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 

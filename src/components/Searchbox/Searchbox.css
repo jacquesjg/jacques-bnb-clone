@@ -1,3 +1,11 @@
 .Searchbox__Container{
-  
+  width: 440px;
+  height: 470px;
+  background-color: yellow;
+  margin-left: 15vw;
+  margin-bottom: 21vh;
+}
+
+.Searchbox__Contents{
+  padding: 32px;
 }
