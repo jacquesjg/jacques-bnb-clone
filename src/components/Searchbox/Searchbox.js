@@ -1,8 +1,10 @@
-import 'react-dates/initialize';
 import React from 'react';
-import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
+import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import './Searchbox.css'
+
 function Searchbox() {
   return (
     <div className="Searchbox__Container">
