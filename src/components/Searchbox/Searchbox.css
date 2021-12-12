@@ -1,11 +1,90 @@
 .Searchbox__Container{
   width: 440px;
   height: 470px;
-  background-color: yellow;
+  background-color: white;
+  opacity: 0.98;
   margin-left: 15vw;
-  margin-bottom: 21vh;
+  margin-bottom:17vh;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.4);
 }
 
 .Searchbox__Contents{
   padding: 32px;
+  padding-right: 53px;
+  display: flex;
+  flex-direction: column;
+}
+
+#Searchbox__Title{
+  font-size: 30px;
+  font-weight: bold;
+  color: #484848;
+}
+
+#Searcbox__Input__Label{
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1px;
+  color: #484848;
+  font-weight: 800;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.Home__Search__Inputs {
+  background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #54555a;
+    font-size: 0.8em;
+    font-weight: 400;
+    line-height: 22px;
+    height: 50px;
+    width: 100%;
+    padding: 0px 10px;
+    -webkit-transition: border 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
+    transition: border 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
+    width: 350px;
+}
+
+
+.Home__Search__Inputs::placeholder {
+   color:  #a5a6ac;
+   font-size: 16px;
+}
+
+.Home__Search__Inputs:focus {
+  border: 1px solid #3A3A4F;
+  outline: none;
+}
+
+#guests{
+  width: 372px;
+}
+
+#sign__button  {
+  height: 50px;
+  width: 372px;
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: white;
+  background-color: #3B3A50;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) ;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  cursor: pointer;
+  display: inline-block;
+}
+
+#sign__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
