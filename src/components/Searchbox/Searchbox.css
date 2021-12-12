@@ -1,3 +1,22 @@
+/* react dates css overrides */
+
+.DateInput {
+  width: 171.5px;
+}
+
+.DateRangePickerInput__withBorder {
+  border: 0px;
+}
+
+.react__dates__container{
+  width: 370px;
+   border: 1.5px solid #eee;
+  border-radius: 4px;
+}
+
+
+/* searchbox css below (no react dates */
+
 .Searchbox__Container{
   width: 440px;
   height: 470px;
@@ -10,7 +29,7 @@
 
 .Searchbox__Contents{
   padding: 32px;
-  padding-right: 53px;
+  padding-right: 0px;
   display: flex;
   flex-direction: column;
 }
@@ -38,24 +57,30 @@
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    color: #54555a;
-    font-size: 0.8em;
-    font-weight: 400;
-    line-height: 22px;
+    color:  #a5a6ac;
+    font-weight: 200;
+    font-size: 19px;
+    line-height: 24px;
+    color: #484848;
     height: 50px;
-    width: 100%;
+    width: 370px !important;
     padding: 0px 10px;
     -webkit-transition: border 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
     transition: border 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
     transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
     transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
     width: 350px;
+
+    
 }
 
 
 .Home__Search__Inputs::placeholder {
    color:  #a5a6ac;
-   font-size: 16px;
+   font-weight: 200;
+    font-size: 19px;
+    line-height: 24px;
+    color: #484848;
 }
 
 .Home__Search__Inputs:focus {
@@ -88,3 +113,6 @@
     transform: translateY(-2px);
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
+
+
+
