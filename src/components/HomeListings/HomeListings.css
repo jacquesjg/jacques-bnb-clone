@@ -1,5 +1,18 @@
+.listing__link {
+  color: #484848;
+  text-decoration: none;
+  line-height: 16px;
+  margin-top: 30px;
+}
+
+.listing__link:hover {
+  color: #484848;
+  text-decoration: none;
+}
+
 .listing__city__title{
   margin-top: 32px;
+  margin-left: 32px;
   font-size: 25px;
   font-weight: bold;
   color: #484848;
@@ -8,28 +21,44 @@
 .listing__container{
   display: flex;
   flex-direction: column;
+  margin-left: 32px;
   width: 295px;
-  /*                    remove later                      */
-  border: 1px solid black;
-  /*                    remove later                      */
 }
 
 .listing__container > img {
   width: 100%;
-  
+  border-radius: 8px 8px 1px 1px;
 }
 
 .type__and__city__container {
   display: flex;
   flex-direction: row;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
 }
 
-.listing__link {
-  color: #484848;
-  text-decoration: none;
+.listing__name {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  margin-top: 2px;
 }
 
-.listing__link:hover {
-  color: #484848;
-  text-decoration: none;
+.listing__price {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.rating__container{
+  display: flex;
+  flex-direction: row;
+}
+
+.rating__number{
+  margin-left: 3px;
+  font-size: 12px;
+  line-height: 18px;
 }

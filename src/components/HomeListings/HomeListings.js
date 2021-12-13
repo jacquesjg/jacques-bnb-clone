@@ -124,23 +124,43 @@ function HomeListings() {
     <>
       <div className="listing__city__title">Homes in Venice</div>
       <div className="listing__row">
-        <div className='listing'>
-          {veniceArray.map((listing) =>
-            <Link className='listing__link' to={`/listing/${listing.id}`} key={listing.id}>
-              <div className="listing__container">
+        {veniceArray.map((listing) =>
+          <Link className='listing__link' to={`/listing/${listing.id}`} key={listing.id}>
+            <div className="listing__container">
 
 
-                <img src={listing.picture_url} />
-
-                <div className="type__and__city__container">
-                  {listing.property_type} • {listing.neighbourhood_cleansed}
-                </div>
+              <img src={listing.picture_url} alt="image preview" />
 
 
+              <div className="type__and__city__container">
+                {listing.property_type} • {listing.neighbourhood_cleansed}
               </div>
-            </Link>
-          )}
-        </div>
+
+
+              <div className='listing__name'>
+                {listing.name}
+              </div>
+
+
+              <div className="listing__price">
+                {listing.price} per night
+              </div>
+
+
+              <div className="rating__container">
+                <ReactStars
+                  size={14}
+                  value={listing.review_scores_rating}
+                  edit={false}
+                  isHalf={true}
+                />
+                <span className='rating__number'>{listing.review_scores_rating}</span>
+              </div>
+
+
+            </div>
+          </Link>
+        )}
       </div>
     </>
   )
