@@ -1,0 +1,35 @@
+.listing__city__title{
+  margin-top: 32px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #484848;
+}
+
+.listing__container{
+  display: flex;
+  flex-direction: column;
+  width: 295px;
+  /*                    remove later                      */
+  border: 1px solid black;
+  /*                    remove later                      */
+}
+
+.listing__container > img {
+  width: 100%;
+  
+}
+
+.type__and__city__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.listing__link {
+  color: #484848;
+  text-decoration: none;
+}
+
+.listing__link:hover {
+  color: #484848;
+  text-decoration: none;
+}

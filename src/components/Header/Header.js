@@ -10,8 +10,8 @@ function Header() {
 
       <div className="links__container">
         <ul className="nav__links">
-          <Link to="/login"><li>Login</li></Link>
-          <Link to="/sign-up"><li>Sign up</li></Link>
+          <Link className="header__button" to="/login"><li>Login</li></Link>
+          <Link className="header__button" to="/sign-up"><li>Sign up</li></Link>
         </ul>
       </div>
     </div>
