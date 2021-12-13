@@ -36,6 +36,11 @@ a {
   height: 80px;
 }
 
+a:hover {
+  color: white;
+}
+
+
 
 .nav__links {
   list-style: none;
