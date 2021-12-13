@@ -52,7 +52,7 @@ class Searchbox extends Component {
             <span id="Searcbox__Input__Label">DATES</span>
 
             <div className="react__dates__container">
-              <DateRangePicker
+              <DateRangePicker withPortal
                 startDate={this.state.startDate} // momentPropTypes.momentObj or null,
                 startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
                 endDate={this.state.endDate} // momentPropTypes.momentObj or null,
