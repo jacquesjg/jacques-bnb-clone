@@ -1,83 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useContext } from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
+import { DataContext } from "../../App.js"
 import './HomeListings.css';
 
 document.documentElement.style.setProperty('--scrollbar-width', (window.innerWidth - document.documentElement.clientWidth) + "px");
 
 function HomeListings() {
-
-  const [veniceArray, setVeniceArray] = useState([]);
-  const [newYorkArray, setNewYorkArray] = useState([]);
-  const [sanFranciscoArray, setSanFranciscoArray] = useState([]);
-  const [shanghaiArray, setShanghaiArray] = useState([]);
-  const [capeTownArray, setCapeTownArray] = useState([]);
-  const [error, setError] = useState("")
-
-  useEffect(() => {
-    fetchListingData();
-  }, []);
-
-
-
-  function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (currentIndex !== 0) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-  }
-
-  const fetchListingData = async () => {
-    try {
-
-      /* Venice Data */
-      const veniceResult = await axios.get('Datasets/Venice-Listings.json');
-      const veniceData = veniceResult.data;
-      shuffle(veniceData);
-      setVeniceArray(veniceData);
-
-      /* Cape Town Data */
-      const capeTownResult = await axios.get('Datasets/Cape-Town-Listings.json');
-      const capeTownData = capeTownResult.data;
-      shuffle(capeTownData);
-      setCapeTownArray(capeTownData);
-
-      /* New York Data */
-      const newYorkResult = await axios.get('Datasets/New-York-Listings.json');
-      const newYorkData = newYorkResult.data;
-      shuffle(newYorkData);
-      setNewYorkArray(newYorkData);
-
-      /* Shanghai Data */
-      const shanghaiResult = await axios.get('Datasets/Shaghai-Listings.json');
-      const shanghaiData = shanghaiResult.data;
-      shuffle(shanghaiData);
-      setShanghaiArray(shanghaiData);
-
-      /* San Francisco Data */
-      const sanFranciscoResult = await axios.get('Datasets/San-Francisco-Listings.json');
-      const sanFranciscoData = sanFranciscoResult.data;
-      shuffle(sanFranciscoData);
-      setSanFranciscoArray(sanFranciscoData);
-
-
-    } catch (e) {
-
-    }
-  }
-
+  const { veniceArray, newYorkArray, sanFranciscoArray, shanghaiArray, capeTownArray } = useContext(DataContext);
   return (
     <>
       <div className="listing__city__title">Homes in New York </div>

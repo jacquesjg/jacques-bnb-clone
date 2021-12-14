@@ -3,18 +3,17 @@ import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 import axios from 'axios';
 require("dotenv").config();
 
-
-function setMapCenter() {
-  return (
-    <GoogleMap
-      defaultZoom={12}
-      defaultCenter={{ lat: 40.730610, lng: -73.935242 }} />
-  );
-};
-
-const WrappedMap = withScriptjs(withGoogleMap(setMapCenter));
-
 function Map() {
+
+  function setMapCenter() {
+    return (
+      <GoogleMap
+        defaultZoom={12}
+        defaultCenter={{ lat: 40.730610, lng: -73.935242 }} />
+    );
+  };
+
+  const WrappedMap = withScriptjs(withGoogleMap(setMapCenter));
 
   const [combineListingData, setCombineListingData] = useState([]);
 
