@@ -1,17 +1,19 @@
 .homtest{
   display: flex;
   flex-direction: column;
-  height: 300vh;
+  height: max-content;
   position: absolute;
   left: 0px;
   top: 0px;
   z-index: -1;
+  padding-bottom: 50px;
 }
 
 .home{
-  background-image: url("../Images/african_treehouse.jpeg"); 
-  min-width: 100vw;
-  min-height: 100vh;
+  background-image: url("../Images/african_treehouse.jpeg");
+  width: calc(100vw - var(--scrollbar-width));
+  height: 100vh;
+  max-width:100%; 
   background-size: cover;
   background-position: center;
 

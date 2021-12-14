@@ -23,3 +23,8 @@ html {
   -webkit-box-sizing: inherit;
       box-sizing: inherit;
 }
+
+html, body {
+  margin: 0; padding-right: 0; 
+  width: calc(100vw - var(--scrollbar-width));
+}
