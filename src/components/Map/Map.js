@@ -1,30 +1,102 @@
-import React, { useState } from 'react'
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
-import axios from 'axios';
+import React, { useState, useContext } from 'react'
+import { DataContext } from '../../App.js';
+import { Link } from 'react-router-dom';
+import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import ReactStars from "react-rating-stars-component";
+import './Map.css';
 require("dotenv").config();
 
+const mapContainerStyle = {
+  width: "100%",
+  height: "100%",
+};
+
 function Map() {
+  const { veniceArray, newYorkArray, sanFranciscoArray, shanghaiArray, capeTownArray } = useContext(DataContext);
+  const allListings = [...veniceArray, ...newYorkArray, ...sanFranciscoArray, ...shanghaiArray, ...capeTownArray]
 
-  function setMapCenter() {
-    return (
-      <GoogleMap
-        defaultZoom={12}
-        defaultCenter={{ lat: 40.730610, lng: -73.935242 }} />
-    );
-  };
+  // const { isLoaded, loadError } = useLoadScript({
+  //   googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
+  //   libraries: ["places"]
+  // });
+  const [coordinates, setCoordinates] = useState({ lat: 40.735843, lng: -73.991644 })
+  const [selected, setSelected] = useState(null)
 
-  const WrappedMap = withScriptjs(withGoogleMap(setMapCenter));
+  // if (loadError) return "Error loading maps";
+  // if (!isLoaded) return "Loading Maps";
 
-  const [combineListingData, setCombineListingData] = useState([]);
 
   return (
-    <div>
-      <WrappedMap
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100vh` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />
+    <div className="map__container">
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        zoom={12}
+        center={coordinates}
+      >
+
+        {allListings.map(listing => (
+          <Marker
+            key={listing.id}
+            position={{ lat: listing.latitude, lng: listing.longitude }}
+            onClick={() => setSelected({
+              lat: listing.latitude,
+              lng: listing.longitude,
+              id: listing.id,
+              picture_url: listing.picture_url,
+              property_type: listing.property_type,
+              neighbourhood_cleansed: listing.neighbourhood_cleansed,
+              name: listing.name,
+              price: listing.price,
+              review_scores_rating: listing.review_scores_rating,
+
+            })}
+          />
+        ))}
+
+        {selected ? (
+          <InfoWindow
+            position={{ lat: selected.lat, lng: selected.lng }}
+            onCloseClick={() => setSelected(null)}
+          >
+            <Link className='listing__link' to={`/listing/${selected.id}`} key={selected.id}>
+              <div className="listing__container">
+
+
+                <img src={selected.picture_url} alt="listing preview" />
+
+
+                <div className="type__and__city__container">
+                  {selected.property_type} • {selected.neighbourhood_cleansed}
+                </div>
+
+
+                <div className='listing__name'>
+                  {selected.name}
+                </div>
+
+
+                <div className="listing__price">
+                  {selected.price} per night
+                </div>
+
+
+                <div className="rating__container">
+                  <ReactStars
+                    size={14}
+                    value={typeof (selected.review_scores_rating) === "number" ? selected.review_scores_rating : 0}
+                    edit={false}
+                    isHalf={true}
+                  />
+                  <span className='rating__number'>{selected.review_scores_rating}</span>
+                </div>
+
+
+              </div>
+            </Link>
+          </InfoWindow>
+        ) : null};
+
+      </GoogleMap>
     </div>
   )
 }

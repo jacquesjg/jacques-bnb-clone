@@ -1,0 +1,10 @@
+.map__and__listing__container{
+  display: flex;
+  flex-direction: row;
+}
+
+.searched__listings{
+  background-color: grey;
+  height: calc(100vh - 80px);
+  width: 60vw;
+}

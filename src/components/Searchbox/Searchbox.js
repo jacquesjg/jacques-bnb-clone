@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import { DateRangePicker } from 'react-dates';
-import './Searchbox.css'
+import Searchbar from './Searchbar/Searchbar';
+import './Searchbox.css';
 
 class Searchbox extends Component {
 
@@ -16,6 +17,8 @@ class Searchbox extends Component {
       guests: "",
     }
   }
+
+
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +49,8 @@ class Searchbox extends Component {
 
 
             <span id="Searcbox__Input__Label">WHERE</span>
-            <input name="destination" className="Home__Search__Inputs" type="text" placeholder="Try New York" autoComplete="new-password" value={this.state.destination} onChange={this.handleDestinationOnChange} />
+            <Searchbar />
+            {/* <input name="destination" className="Home__Search__Inputs" type="text" placeholder="Try New York" autoComplete="new-password" value={this.state.destination} onChange={this.handleDestinationOnChange} /> */}
 
 
             <span id="Searcbox__Input__Label">DATES</span>

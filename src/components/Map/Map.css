@@ -1,0 +1,4 @@
+.map__container{
+  height: calc(100vh - 80px);
+  width: 40vw;
+}

@@ -41,7 +41,6 @@ function App() {
 
   const fetchListingData = async () => {
     try {
-      /* Venice Data */
       const result = await axios.get('https://jacquesjg.github.io/jacques-bnb-clone-api/listingData.json');
 
       const veniceData = result.data.venice;
@@ -63,7 +62,7 @@ function App() {
       setSanFranciscoArray(sanFranciscoData);
 
     } catch (e) {
-
+      console.log("error:", e.message);
     }
   }
 
