@@ -18,7 +18,6 @@ function App() {
   const [error, setError] = useState("")
 
   useEffect(() => {
-    console.log("Use Effect called")
     fetchListingData();
   }, []);
 
@@ -42,35 +41,25 @@ function App() {
 
   const fetchListingData = async () => {
     try {
-      console.log(veniceArray)
       /* Venice Data */
-      const veniceResult = await axios.get('Datasets/Venice-Listings.json');
-      const veniceData = veniceResult.data;
+      const result = await axios.get('https://jacquesjg.github.io/jacques-bnb-clone-api/listingData.json');
+
+      const veniceData = result.data.venice;
+      const capeTownData = result.data.capeTown;
+      const newYorkData = result.data.newYork;
+      const shanghaiData = result.data.shanghai;
+      const sanFranciscoData = result.data.sanFrancisco;
+
       shuffle(veniceData);
-      setVeniceArray(veniceData);
-
-      /* Cape Town Data */
-      const capeTownResult = await axios.get('Datasets/Cape-Town-Listings.json');
-      const capeTownData = capeTownResult.data;
       shuffle(capeTownData);
-      setCapeTownArray(capeTownData);
-
-      /* New York Data */
-      const newYorkResult = await axios.get('Datasets/New-York-Listings.json');
-      const newYorkData = newYorkResult.data;
       shuffle(newYorkData);
-      setNewYorkArray(newYorkData);
-
-      /* Shanghai Data */
-      const shanghaiResult = await axios.get('Datasets/Shaghai-Listings.json');
-      const shanghaiData = shanghaiResult.data;
       shuffle(shanghaiData);
-      setShanghaiArray(shanghaiData);
-
-      /* San Francisco Data */
-      const sanFranciscoResult = await axios.get('Datasets/San-Francisco-Listings.json');
-      const sanFranciscoData = sanFranciscoResult.data;
       shuffle(sanFranciscoData);
+
+      setVeniceArray(veniceData);
+      setCapeTownArray(capeTownData);
+      setNewYorkArray(newYorkData);
+      setShanghaiArray(shanghaiData);
       setSanFranciscoArray(sanFranciscoData);
 
     } catch (e) {
