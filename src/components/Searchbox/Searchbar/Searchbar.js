@@ -1,26 +1,26 @@
-import React, { useState, useContext } from "react";
-import { SearchContext } from "../../../context/searchContext";
+import React, { useContext } from "react";
 import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption, } from "@reach/combobox";
+import { SearchContext } from "../../../context/searchContext";
 import "@reach/combobox/styles.css";
 require("dotenv").config();
 
 
 function Searchbar() {
 
+  const searchContext = useContext(SearchContext);
+
   const {
     ready,
     value,
     suggestions: { status, data },
     setValue,
-    clearSuggestions,
+    clearSuggestions
   } = usePlacesAutocomplete();
 
   // if (!isLoaded) return "Loading Maps";
 
   // https://developers.google.com/maps/documentation/javascript/reference/places-autocomplete-service#AutocompletionRequest
-
-  const [coordinates, setCoordinates] = useState(null);
 
   const handleInput = (e) => {
     setValue(e.target.value);
@@ -46,7 +46,7 @@ function Searchbar() {
     try {
       const results = await getGeocode({ address });
       const { lat, lng } = await getLatLng(results[0]);
-      setCoordinates({ lat: lat, lng: lng });
+      searchContext.searchDestinationHandler({ lat: lat, lng: lng });
       /* panTo({ lat, lng }); */
     } catch (e) {
       console.log("error:", e.message);

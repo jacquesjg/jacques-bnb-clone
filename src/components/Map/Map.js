@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { DataContext } from '../../App.js';
+import { SearchContext } from '../../context/searchContext';
 import { Link } from 'react-router-dom';
-import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 import ReactStars from "react-rating-stars-component";
 import './Map.css';
 require("dotenv").config();
@@ -13,13 +14,14 @@ const mapContainerStyle = {
 
 function Map() {
   const { veniceArray, newYorkArray, sanFranciscoArray, shanghaiArray, capeTownArray } = useContext(DataContext);
+  const { destination } = useContext(SearchContext);
   const allListings = [...veniceArray, ...newYorkArray, ...sanFranciscoArray, ...shanghaiArray, ...capeTownArray]
 
   // const { isLoaded, loadError } = useLoadScript({
   //   googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   //   libraries: ["places"]
   // });
-  const [coordinates, setCoordinates] = useState({ lat: 40.735843, lng: -73.991644 })
+  // const [coordinates, setCoordinates] = useState({ lat: 40.735843, lng: -73.991644 })
   const [selected, setSelected] = useState(null)
 
   // if (loadError) return "Error loading maps";
@@ -31,7 +33,7 @@ function Map() {
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={12}
-        center={coordinates}
+        center={destination}
       >
 
         {allListings.map(listing => (

@@ -15,7 +15,6 @@ function App() {
   const [sanFranciscoArray, setSanFranciscoArray] = useState([]);
   const [shanghaiArray, setShanghaiArray] = useState([]);
   const [capeTownArray, setCapeTownArray] = useState([]);
-  const [error, setError] = useState("")
 
   useEffect(() => {
     fetchListingData();
@@ -61,8 +60,8 @@ function App() {
       setShanghaiArray(shanghaiData);
       setSanFranciscoArray(sanFranciscoData);
 
-    } catch (e) {
-      console.log("error:", e.message);
+    } catch (error) {
+      console.log("error:", error.message);
     }
   }
 
