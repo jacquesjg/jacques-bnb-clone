@@ -1,4 +1,12 @@
 .map__container{
   height: calc(100vh - 80px);
-  width: 40vw;
+  width: 39.5vw;
+  position: fixed;
+  left: 60vw;
+  top: 80px;
+  border-radius: 10px;
+}
+
+.map__container > div {
+  border-radius: 10px;
 }

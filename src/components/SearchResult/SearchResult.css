@@ -1,10 +1,29 @@
 .map__and__listing__container{
+  position: fixed;
+  overflow-y: scroll;
+  top: 80px;
   display: flex;
   flex-direction: row;
 }
 
 .searched__listings{
-  background-color: grey;
+  
+  top: 80px;
   height: calc(100vh - 80px);
   width: 60vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(407px, 1fr));
+  justify-items: center;
+}
+
+.result {
+  margin-bottom: 10px;
+}
+
+.searched{
+  width: 400px;
+  height: 360px;
+}
+#searched__image{
+  height: 266px !important;
 }

@@ -2,18 +2,23 @@
   height: 80px;
   width: calc(100vw - var(--scrollbar-width));
   max-width: 100%; 
-  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
-.white__logo{
+.logo{
   margin-top: 27px;
   margin-left: 20px;
   opacity: 0.8;
   width: 30px;
   height: 30px;
+}
+
+.logo__search__container{
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
 }
 
 .links__container {

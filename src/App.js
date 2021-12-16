@@ -15,6 +15,7 @@ function App() {
   const [sanFranciscoArray, setSanFranciscoArray] = useState([]);
   const [shanghaiArray, setShanghaiArray] = useState([]);
   const [capeTownArray, setCapeTownArray] = useState([]);
+  const allListings = [...veniceArray, ...newYorkArray, ...sanFranciscoArray, ...shanghaiArray, ...capeTownArray];
 
   useEffect(() => {
     fetchListingData();
@@ -67,7 +68,7 @@ function App() {
 
   return (
     <div className="App">
-      <DataContext.Provider value={{ veniceArray, newYorkArray, sanFranciscoArray, shanghaiArray, capeTownArray }}>
+      <DataContext.Provider value={{ veniceArray, newYorkArray, sanFranciscoArray, shanghaiArray, capeTownArray, allListings }}>
         < Router >
           <Header />
           <Routes>
