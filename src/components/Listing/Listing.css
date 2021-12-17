@@ -24,16 +24,16 @@
   display: flex;
   flex-direction: row;
   align-items: space-between;
-  background-color: green;
 }
 
 .left__container{
   width: 65%;
+  display: flex;
+  flex-direction: column;
 }
 
 .right__container{
   width: 35%;
-  background-color: pink;
 }
 
 .type__and__hood{
@@ -42,5 +42,17 @@
   margin-top: 15px;
   font-size: 20px;
   font-weight: 450;
-  background-color: blueviolet;
+}
+
+.amenities {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.amenity__item{
+  color: #484848;
+  width: 50%;
+  margin: 0;
+  padding: 0;
 }

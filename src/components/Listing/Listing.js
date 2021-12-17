@@ -81,10 +81,100 @@ function Listing() {
                 <div className="type__and__hood">
                   {listing.property_type} in {listing.neighbourhood_cleansed}
                 </div>
+
+                <div className="accomodations" style={{ color: "#484848" }}>
+                  {listing.bedrooms === 1 ? `${listing.bedrooms} bedroom` : `${listing.bedrooms} bedrooms`} • {listing.beds === 1 ? `${listing.beds} bed` : `${listing.beds} beds`} • {listing.bathrooms_text}
+                </div>
+                <hr className="solid" />
+
+                <div className="amenities" >
+                  {listing.amenities.map((item) => {
+
+                    if (item === "BBQ grill") {
+                      return <div className="amenity__item">
+                        <OutdoorGrill style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    if (item === "Kitchen") {
+                      return <div className="amenity__item">
+                        <Kitchen style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    if (item === "Microwave") {
+                      return <div className="amenity__item">
+                        <Microwave style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+
+                    if (item === "Long term stays allowed") {
+                      return <div className="amenity__item">
+                        <DateRange style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    if ((item === "Washer") || (item === "Dryer")) {
+                      return <div className="amenity__item">
+                        <LocalLaundryService style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    if (item === "Air conditioning") {
+                      return <div className="amenity__item">
+                        <AcUnit style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    if (item === "Heating") {
+                      return <div className="amenity__item">
+                        <Hvac style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    if ((item === "Free parking on premises") || (item === "Free street parking")) {
+                      return <div className="amenity__item">
+                        <LocalParking style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    if (item === "Hot tub") {
+                      return <div className="amenity__item">
+                        <HotTub style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    if ((item === "TV") || (item === "Cable TV")) {
+                      return <div className="amenity__item">
+                        <Tv style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    if (item === "Wifi") {
+                      return <div className="amenity__item">
+                        <Wifi style={{ color: "#FF5A5F" }} /> {item}
+                      </div>
+                    }
+
+                    return null;
+                  })}
+
+                </div>
+
+                <hr className="solid" />
+
+                <div className="description">
+                  {listing.description}
+                </div>
+
+                <hr className="solid" />
+
+
               </div>
 
               <div className="right__container">
-                test
+                booking box goes here
               </div>
 
 
@@ -95,13 +185,12 @@ function Listing() {
 
           </Container>
           : null
-      ) : null}
+      ) : null
+      }
 
 
       {/* 
 
-      {console.log(currentListing.property_type)}
-      {console.log(currentListing.neighbourhood_cleansed)}
 
       {console.log(currentListing.description)}
       {console.log(currentListing.bedrooms)}
@@ -123,7 +212,7 @@ function Listing() {
       <AcUnit />
       <Hvac /> */}
 
-    </div>
+    </div >
   )
 };
 
