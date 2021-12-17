@@ -7,7 +7,6 @@ import './Header.css';
 
 function Header() {
   const location = useLocation();
-  console.log("header location:", location.pathname);
   return (
     <div className='header'>
       <div className='logo__search__container'>

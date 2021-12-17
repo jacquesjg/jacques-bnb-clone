@@ -3,7 +3,6 @@ import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autoco
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption, } from "@reach/combobox";
 import { SearchContext } from "../../../context/searchContext";
 import "@reach/combobox/styles.css";
-require("dotenv").config();
 
 
 function Searchbar() {

@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext } from 'react';
 import Home from './components/Home/Home';
 import SearchResult from './components/SearchResult/SearchResult';
 import Header from './components/Header/Header';
+import Listing from './components/Listing/Listing';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -73,7 +74,8 @@ function App() {
           <Header />
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/search-result" element={<SearchResult />} />
+            <Route exact path="/search-result/" element={<SearchResult />} />
+            <Route exact path="/listing/:listingID" element={<Listing />} />
           </Routes>
         </Router >
       </DataContext.Provider>

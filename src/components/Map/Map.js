@@ -4,9 +4,6 @@ import { SearchContext } from '../../context/searchContext';
 import { Link } from 'react-router-dom';
 import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 import ReactStars from "react-rating-stars-component";
-import {
-  headingDistanceTo
-} from 'geolocation-utils';
 
 import './Map.css';
 
@@ -17,23 +14,19 @@ const mapContainerStyle = {
 
 function Map() {
   const { allListings } = useContext(DataContext);
-  const { destination } = useContext(SearchContext);
-
+  const { destination, searchDestinationHandler } = useContext(SearchContext);
+  console.log(destination)
 
   const [selected, setSelected] = useState(null)
 
 
-
-  // const location1 = { lat: 37.773972, lng: -122.431297 }
-  // const location2 = destination
-  // console.log(headingDistanceTo(location1, location2))
 
   return (
     <div className="map__container">
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={12}
-        center={destination}
+        center={destination === "" ? searchDestinationHandler({ lat: 40.730610, lng: -73.935242 }) : destination}
       >
 
         {allListings.map(listing => (
@@ -99,7 +92,7 @@ function Map() {
         ) : null};
 
       </GoogleMap>
-    </div>
+    </div >
   )
 }
 
