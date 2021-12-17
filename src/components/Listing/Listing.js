@@ -5,7 +5,9 @@ import { StarOutline, Wifi, LocalParking, Kitchen, Tv, Microwave, OutdoorGrill, 
 import { Container, Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { DataContext } from '../../App';
+import img1 from "../Images/1.png"; import img2 from "../Images/2.png"; import img3 from "../Images/3.png"; import img4 from "../Images/4.png"; import img5 from "../Images/5.png"; import img6 from "../Images/6.png";
 import './Listing.css';
+var humanNames = require('human-names');
 var moment = require('moment');
 
 
@@ -225,7 +227,86 @@ function Listing() {
 
 
               <div className="rating__section__reviews">
-                reviews
+
+                <div className="review__container">
+                  <div className="user__date__pic__container">
+                    <img src={img1} alt="user__profile" className='profile__picture' />
+                    <div className="name__date__container">
+                      <div className='review__name'>{humanNames.femaleRandom()}</div>
+                      <div className='review__date'>{moment().format("MMMM Y")}</div>
+                    </div>
+                  </div>
+                  <div className="user__review">
+                    Wish we could've stayed longer! Can't think of any downsides at all. Everything from the cleanliness, tropical decor, and amenities were perfect. The kitchen is so well equipped that we actually ended up cooking quite a bit.
+                  </div>
+                </div>
+
+                <div className="review__container">
+                  <div className="user__date__pic__container">
+                    <img src={img2} alt="user__profile" className='profile__picture' />
+                    <div className="name__date__container">
+                      <div className='review__name'>{humanNames.maleRandom()}</div>
+                      <div className='review__date'>{moment().format("MMMM Y")}</div>
+                    </div>
+                  </div>
+                  <div className="user__review">
+                    It feels like an oasis amidst a busy city because it's so quiet but still within walking distance from the back of the train station. It's so convenient for those without a car - from the airport we caught the bus, which drops you at the station and voila, a short walk will get you to Angy's place.
+                  </div>
+                </div>
+
+                <div className="review__container">
+                  <div className="user__date__pic__container">
+                    <img src={img3} alt="user__profile" className='profile__picture' />
+                    <div className="name__date__container">
+                      <div className='review__name'>{humanNames.maleRandom()}</div>
+                      <div className='review__date'>{moment().format("MMMM Y")}</div>
+                    </div>
+                  </div>
+                  <div className="user__review">
+                    The place is even prettier than in the pictures and the hosts helped with planning all meals and recommendations. The nights where the chef came to the house were incredible. Our group of 8 had a great time and felt like we all had our own space.
+                  </div>
+                </div>
+
+                <div className="review__container">
+                  <div className="user__date__pic__container">
+                    <img src={img4} alt="user__profile" className='profile__picture' />
+                    <div className="name__date__container">
+                      <div className='review__name'>{humanNames.femaleRandom()}</div>
+                      <div className='review__date'>{moment().format("MMMM Y")}</div>
+                    </div>
+                  </div>
+                  <div className="user__review">
+                    The holiday spent in this house was a wonderful experience, and Valeria (the house manager) was kind and quick to answer any question you may rise during your stay. She made our stay easy and peaceful. My warmest recommendations go to Patrizio and Mark for giving us the opportunity to experience such a wonderful place.
+                  </div>
+                </div>
+
+
+                <div className="review__container">
+                  <div className="user__date__pic__container">
+                    <img src={img5} alt="user__profile" className='profile__picture' />
+                    <div className="name__date__container">
+                      <div className='review__name'>{humanNames.femaleRandom()}</div>
+                      <div className='review__date'>{moment().format("MMMM Y")}</div>
+                    </div>
+                  </div>
+                  <div className="user__review">
+                    What an incredible home! Everything was absolutely perfect. Comfortable beds with great linens, a big kitchen to gather and cook, outdoor areas that are so picturesque they look like a movie, and a fantastic host!
+                  </div>
+                </div>
+
+                <div className="review__container">
+                  <div className="user__date__pic__container">
+                    <img src={img6} alt="user__profile" className='profile__picture' />
+                    <div className="name__date__container">
+                      <div className='review__name'>{humanNames.maleRandom()}</div>
+                      <div className='review__date'>{moment().format("MMMM Y")}</div>
+                    </div>
+                  </div>
+                  <div className="user__review">
+                    Spacious, well equipped and the interior is designed with a lot of love for details. You can truly relax here, enjoy your time by the pool and have nice dinners or BBQs with friends and family, outside and inside.
+                  </div>
+                </div>
+
               </div>
 
 
