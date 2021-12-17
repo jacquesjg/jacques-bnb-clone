@@ -168,7 +168,6 @@ function Listing() {
                   {listing.description}
                 </div>
 
-                <hr className="solid" />
 
 
               </div>
@@ -177,6 +176,57 @@ function Listing() {
                 booking box goes here
               </div>
 
+
+
+
+
+            </div>
+
+
+
+
+
+            <div className="rating__section">
+
+              <hr className="solid" />
+
+
+              <div className="rating__section__ratings">
+
+                <div className="rating__section__item">
+                  Accuracy <div className="rating__bar__container"><div className='bar'></div> 5.0</div>
+                </div>
+
+                <div className="rating__section__item">
+                  Communication <div className="rating__bar__container"><div className='bar'></div> 5.0</div>
+                </div>
+
+                <div className="rating__section__item">
+                  Cleanliness <div className="rating__bar__container"><div className='bar'></div> 5.0</div>
+                </div>
+
+                <div className="rating__section__item">
+                  Location <div className="rating__bar__container"><div className='bar'></div> 5.0</div>
+                </div>
+
+                <div className="rating__section__item">
+                  Check-in <div className="rating__bar__container"><div className='bar'></div> 5.0</div>
+                </div>
+
+                <div className="rating__section__item">
+                  Value <div className="rating__bar__container"><div className='bar'></div> 5.0</div>
+                </div>
+
+
+              </div>
+
+
+              <hr className="solid" />
+
+
+              <div className="rating__section__reviews">
+                reviews
+              </div>
 
 
             </div>
