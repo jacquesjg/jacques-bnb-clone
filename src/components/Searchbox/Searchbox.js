@@ -30,6 +30,7 @@ function Searchbox() {
     navigate("/search-result");
   };
 
+
   return (
     <div className="Searchbox__Container" >
       <div className="Searchbox__Contents">
@@ -55,6 +56,7 @@ function Searchbox() {
               onFocusChange={focusedInput => setFocusedInput(focusedInput)} // PropTypes.func.isRequired,
             />
           </div>
+
 
           <span id="Searcbox__Input__Label">GUESTS</span>
           <select id="guests" className="Home__Search__Inputs" value={guests} onChange={(e) => setGuests(e.target.value)}>

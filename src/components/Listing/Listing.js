@@ -5,19 +5,17 @@ import { StarOutline, Wifi, LocalParking, Kitchen, Tv, Microwave, OutdoorGrill, 
 import { Container, Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { DataContext } from '../../App';
+import BookingBox from '../BookingBox/BookingBox';
 import img1 from "../Images/1.png"; import img2 from "../Images/2.png"; import img3 from "../Images/3.png"; import img4 from "../Images/4.png"; import img5 from "../Images/5.png"; import img6 from "../Images/6.png";
 import './Listing.css';
 var humanNames = require('human-names');
 var moment = require('moment');
 
-
 function Listing() {
   const { listingID } = useParams();
-  const { guests, startDate, endDate, searchStartDateHandler, searchEndDateHandler } = useContext(SearchContext);
+
   const [listings, setListings] = useState([]);
-  console.log("guests", guests);
-  console.log('startdate', startDate);
-  console.log('endDate', endDate);
+
 
 
 
@@ -28,7 +26,6 @@ function Listing() {
   const fetchListingData = async () => {
     try {
       const result = await axios.get('https://jacquesjg.github.io/jacques-bnb-clone-api2/listingAll.json');
-
       setListings(result.data)
     } catch (error) {
       console.log("error:", error.message);
@@ -167,7 +164,7 @@ function Listing() {
                 <hr className="solid" />
 
                 <div className="description">
-                  {listing.description}
+                  {listing.description}.
                 </div>
 
 
@@ -175,7 +172,7 @@ function Listing() {
               </div>
 
               <div className="right__container">
-                booking box goes here
+                <BookingBox price={listing.price} />
               </div>
 
 
