@@ -1,55 +1,41 @@
-/* react dates css overrides */
-
-.DateInput {
-  width: 171.5px;
-}
-
-.DateRangePickerInput__withBorder {
-  border: 0px;
-}
-
-.react-dates-container{
-  width: 370px;
-   border: 1.5px solid #eee;
-  border-radius: 4px;
-}
-
-
-.Searchbox-Container{
-  width: 440px;
-  height: 470px;
-  background-color: white;
-  opacity: 0.98;
-  margin-left: 15vw;
-  margin-bottom:17vh;
-  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.4);
-}
-
-.Searchbox-Contents{
-  padding: 32px;
-  padding-right: 0px;
+.center-div-container{
+  height: calc(100vh - 80px);
+  width: 100vw; 
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#Searchbox-Title{
+.sign-up-box {
+  width: min-content;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  background-color: white	;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+.sign-up-title {
   font-size: 30px;
   font-weight: bold;
   color: #484848;
-}
-
-#Searcbox-Input-Label{
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 1px;
-  color: #484848;
-  font-weight: 800;
-  display: block;
-  margin-top: 20px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.Home-Search-Inputs {
+.validation-text{
+  margin-left: 10px;
+  color: #FF5A5F;
+  font-weight: 200;
+}
+
+.sign-up-box > form > input {
   background-color: #ffffff;
     border: 1px solid #eee;
     border-radius: 4px;
@@ -68,37 +54,22 @@
     transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
     transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
     width: 350px;
-
-    
 }
 
-
-.Home-Search-Inputs::placeholder {
-   color:  #a5a6ac;
-   font-weight: 200;
-    font-size: 19px;
-    line-height: 24px;
-    color: #484848;
-}
-
-.Home-Search-Inputs:focus {
+.sign-up-box > form > input:focus {
   border: 1px solid #3A3A4F;
   outline: none;
 }
 
-#guests{
-  width: 372px;
-}
-
-#sign-button  {
+.sign-button-signup  {
   height: 50px;
-  width: 372px;
+  width: 100%;
   margin-top: 25px;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0px;
   color: white;
-  background-color: #3B3A50;
+  background-color: #FF5A5F;
   border: 1px solid #eee;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) ;
@@ -107,10 +78,20 @@
   display: inline-block;
 }
 
-#sign-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+.sign-button-signup:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
 

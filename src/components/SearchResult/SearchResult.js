@@ -23,39 +23,39 @@ function SearchResult() {
   })
 
   return (
-    <div className='map__and__listing__container'>
-      <div className='searched__listings'>
+    <div className='map-and-listing-container'>
+      <div className='searched-listings'>
         {nearListings.map((listing) =>
-          <Link className='listing__link result searched' to={`/listing/${listing.id}`} key={listing.id}>
-            <div className="listing__container searched">
+          <Link className='listing-link result searched' to={`/listing/${listing.id}`} key={listing.id}>
+            <div className="listing-container searched">
 
 
-              <img src={listing.picture_url} id="searched__image" alt="listing preview" />
+              <img src={listing.picture_url} id="searched-image" alt="listing preview" />
 
 
-              <div className="type__and__city__container">
+              <div className="type-and-city-container">
                 {listing.property_type} • {listing.neighbourhood_cleansed}
               </div>
 
 
-              <div className='listing__name'>
+              <div className='listing-name'>
                 {listing.name}
               </div>
 
 
-              <div className="listing__price">
+              <div className="listing-price">
                 {listing.price} per night
               </div>
 
 
-              <div className="rating__container">
+              <div className="rating-container">
                 <ReactStars
                   size={14}
                   value={typeof (listing.review_scores_rating) === "number" ? listing.review_scores_rating : 0}
                   edit={false}
                   isHalf={true}
                 />
-                <span className='rating__number'>{listing.review_scores_rating}</span>
+                <span className='rating-number'>{listing.review_scores_rating}</span>
               </div>
 
 

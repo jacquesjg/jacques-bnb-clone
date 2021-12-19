@@ -28,14 +28,6 @@ function Searchbar() {
   const handleSelect = async (address) => {
     setValue(address, false);
     clearSuggestions();
-
-    try {
-      const results = await getGeocode({ address });
-      const { lat, lng } = await getLatLng(results[0]);
-      /* panTo({ lat, lng }); */
-    } catch (e) {
-      console.log("error:", e.message);
-    }
   };
 
   const handleOnBlur = async (address) => {
@@ -56,7 +48,7 @@ function Searchbar() {
     <div className="search">
       <Combobox onSelect={handleSelect} >
         <ComboboxInput
-          className="Home__Search__Inputs"
+          className="Home-Search-Inputs"
           value={value}
           onChange={handleInput}
           disabled={!ready}

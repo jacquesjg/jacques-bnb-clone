@@ -10,39 +10,39 @@ function HomeListings() {
   const { veniceArray, newYorkArray, sanFranciscoArray, shanghaiArray, capeTownArray } = useContext(DataContext);
   return (
     <>
-      <div className="listing__city__title">Homes in New York </div>
-      <div className="listing__row">
+      <div className="listing-city-title">Homes in New York </div>
+      <div className="listing-row">
         {newYorkArray.map((listing) =>
-          <Link className='listing__link' to={`/listing/${listing.id}`} key={listing.id}>
-            <div className="listing__container">
+          <Link className='listing-link' to={`/listing/${listing.id}`} key={listing.id}>
+            <div className="listing-container">
 
 
               <img src={listing.picture_url} alt="listing preview" />
 
 
-              <div className="type__and__city__container">
+              <div className="type-and-city-container">
                 {listing.property_type} • {listing.neighbourhood_cleansed}
               </div>
 
 
-              <div className='listing__name'>
+              <div className='listing-name'>
                 {listing.name}
               </div>
 
 
-              <div className="listing__price">
+              <div className="listing-price">
                 {listing.price} per night
               </div>
 
 
-              <div className="rating__container">
+              <div className="rating-container">
                 <ReactStars
                   size={14}
                   value={typeof (listing.review_scores_rating) === "number" ? listing.review_scores_rating : 0}
                   edit={false}
                   isHalf={true}
                 />
-                <span className='rating__number'>{listing.review_scores_rating}</span>
+                <span className='rating-number'>{listing.review_scores_rating}</span>
               </div>
 
 
@@ -52,39 +52,39 @@ function HomeListings() {
       </div>
 
 
-      <div className="listing__city__title">Homes in San Francisco</div>
-      <div className="listing__row">
+      <div className="listing-city-title">Homes in San Francisco</div>
+      <div className="listing-row">
         {sanFranciscoArray.map((listing) =>
-          <Link className='listing__link' to={`/listing/${listing.id}`} key={listing.id}>
-            <div className="listing__container">
+          <Link className='listing-link' to={`/listing/${listing.id}`} key={listing.id}>
+            <div className="listing-container">
 
 
               <img src={listing.picture_url} alt="listing preview" />
 
 
-              <div className="type__and__city__container">
+              <div className="type-and-city-container">
                 {listing.property_type} • {listing.neighbourhood_cleansed}
               </div>
 
 
-              <div className='listing__name'>
+              <div className='listing-name'>
                 {listing.name}
               </div>
 
 
-              <div className="listing__price">
+              <div className="listing-price">
                 {listing.price} per night
               </div>
 
 
-              <div className="rating__container">
+              <div className="rating-container">
                 <ReactStars
                   size={14}
                   value={typeof (listing.review_scores_rating) === "number" ? listing.review_scores_rating : 0}
                   edit={false}
                   isHalf={true}
                 />
-                <span className='rating__number'>{listing.review_scores_rating}</span>
+                <span className='rating-number'>{listing.review_scores_rating}</span>
               </div>
 
 
@@ -94,39 +94,39 @@ function HomeListings() {
       </div>
 
 
-      <div className="listing__city__title">Homes in Shanghai</div>
-      <div className="listing__row">
+      <div className="listing-city-title">Homes in Shanghai</div>
+      <div className="listing-row">
         {shanghaiArray.map((listing) =>
-          <Link className='listing__link' to={`/listing/${listing.id}`} key={listing.id}>
-            <div className="listing__container">
+          <Link className='listing-link' to={`/listing/${listing.id}`} key={listing.id}>
+            <div className="listing-container">
 
 
               <img src={listing.picture_url} alt="listing preview" />
 
 
-              <div className="type__and__city__container">
+              <div className="type-and-city-container">
                 {listing.property_type} • {listing.neighbourhood_cleansed}
               </div>
 
 
-              <div className='listing__name'>
+              <div className='listing-name'>
                 {listing.name}
               </div>
 
 
-              <div className="listing__price">
+              <div className="listing-price">
                 {listing.price} per night
               </div>
 
 
-              <div className="rating__container">
+              <div className="rating-container">
                 <ReactStars
                   size={14}
                   value={typeof (listing.review_scores_rating) === "number" ? listing.review_scores_rating : 0}
                   edit={false}
                   isHalf={true}
                 />
-                <span className='rating__number'>{listing.review_scores_rating}</span>
+                <span className='rating-number'>{listing.review_scores_rating}</span>
               </div>
 
 
@@ -136,39 +136,39 @@ function HomeListings() {
       </div>
 
 
-      <div className="listing__city__title">Homes in Venice</div>
-      <div className="listing__row">
+      <div className="listing-city-title">Homes in Venice</div>
+      <div className="listing-row">
         {veniceArray.map((listing) =>
-          <Link className='listing__link' to={`/listing/${listing.id}`} key={listing.id}>
-            <div className="listing__container">
+          <Link className='listing-link' to={`/listing/${listing.id}`} key={listing.id}>
+            <div className="listing-container">
 
 
               <img src={listing.picture_url} alt="listing preview" />
 
 
-              <div className="type__and__city__container">
+              <div className="type-and-city-container">
                 {listing.property_type} • {listing.neighbourhood_cleansed}
               </div>
 
 
-              <div className='listing__name'>
+              <div className='listing-name'>
                 {listing.name}
               </div>
 
 
-              <div className="listing__price">
+              <div className="listing-price">
                 {listing.price} per night
               </div>
 
 
-              <div className="rating__container">
+              <div className="rating-container">
                 <ReactStars
                   size={14}
                   value={typeof (listing.review_scores_rating) === "number" ? listing.review_scores_rating : 0}
                   edit={false}
                   isHalf={true}
                 />
-                <span className='rating__number'>{listing.review_scores_rating}</span>
+                <span className='rating-number'>{listing.review_scores_rating}</span>
               </div>
 
 
@@ -178,39 +178,39 @@ function HomeListings() {
       </div>
 
 
-      <div className="listing__city__title">Homes in Cape Town</div>
-      <div className="listing__row">
+      <div className="listing-city-title">Homes in Cape Town</div>
+      <div className="listing-row">
         {capeTownArray.map((listing) =>
-          <Link className='listing__link' to={`/listing/${listing.id}`} key={listing.id}>
-            <div className="listing__container">
+          <Link className='listing-link' to={`/listing/${listing.id}`} key={listing.id}>
+            <div className="listing-container">
 
 
               <img src={listing.picture_url} alt="listing preview" />
 
 
-              <div className="type__and__city__container">
+              <div className="type-and-city-container">
                 {listing.property_type} • {listing.neighbourhood_cleansed}
               </div>
 
 
-              <div className='listing__name'>
+              <div className='listing-name'>
                 {listing.name}
               </div>
 
 
-              <div className="listing__price">
+              <div className="listing-price">
                 {listing.price} per night
               </div>
 
 
-              <div className="rating__container">
+              <div className="rating-container">
                 <ReactStars
                   size={14}
                   value={typeof (listing.review_scores_rating) === "number" ? listing.review_scores_rating : 0}
                   edit={false}
                   isHalf={true}
                 />
-                <span className='rating__number'>{listing.review_scores_rating}</span>
+                <span className='rating-number'>{listing.review_scores_rating}</span>
               </div>
 
 

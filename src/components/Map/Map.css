@@ -1,4 +1,4 @@
-.map__container{
+.map-container{
   height: calc(100vh - 80px);
   width: 39.5vw;
   position: fixed;
@@ -7,6 +7,6 @@
   border-radius: 10px;
 }
 
-.map__container > div {
+.map-container > div {
   border-radius: 10px;
 }

@@ -22,7 +22,7 @@ function Map() {
 
 
   return (
-    <div className="map__container">
+    <div className="map-container">
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={12}
@@ -53,36 +53,36 @@ function Map() {
             position={{ lat: selected.lat, lng: selected.lng }}
             onCloseClick={() => setSelected(null)}
           >
-            <Link className='listing__link' to={`/listing/${selected.id}`} key={selected.id}>
-              <div className="listing__container">
+            <Link className='listing-link' to={`/listing/${selected.id}`} key={selected.id}>
+              <div className="listing-container">
 
 
                 <img src={selected.picture_url} alt="listing preview" />
 
 
-                <div className="type__and__city__container">
+                <div className="type-and-city-container">
                   {selected.property_type} • {selected.neighbourhood_cleansed}
                 </div>
 
 
-                <div className='listing__name'>
+                <div className='listing-name'>
                   {selected.name}
                 </div>
 
 
-                <div className="listing__price">
+                <div className="listing-price">
                   {selected.price} per night
                 </div>
 
 
-                <div className="rating__container">
+                <div className="rating-container">
                   <ReactStars
                     size={14}
                     value={typeof (selected.review_scores_rating) === "number" ? selected.review_scores_rating : 0}
                     edit={false}
                     isHalf={true}
                   />
-                  <span className='rating__number'>{selected.review_scores_rating}</span>
+                  <span className='rating-number'>{selected.review_scores_rating}</span>
                 </div>
 
 

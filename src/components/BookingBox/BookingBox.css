@@ -8,7 +8,7 @@
   border: 0px;
 }
 
-.react__dates__container__booking{
+.react-dates-container-booking{
    border: 1.5px solid #eee;
   border-radius: 4px;
 }
@@ -16,13 +16,13 @@
 
 /* searchbox css below (no react dates */
 
-.Searchbox__Container__booking{
+.Searchbox-Container-booking{
   background-color: white;
   opacity: 0.98;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
 }
 
-.Searchbox__Contents__booking{
+.Searchbox-Contents-booking{
   padding-right: 0px;
   display: flex;
   flex-direction: column;
@@ -35,13 +35,13 @@
   font-weight: 200;
 }
 
-#Searchbox__Title__booking{
+#Searchbox-Title-booking{
   font-size: 30px;
   font-weight: bold;
   color: #484848;
 }
 
-#Searcbox__Input__Label__booking{
+#Searcbox-Input-Label-booking{
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 1px;
@@ -52,7 +52,7 @@
   margin-bottom: 10px;
 }
 
-.Home__Search__Inputs__booking {
+.Home-Search-Inputs-booking {
   background-color: #ffffff;
     border: 1px solid #eee;
     border-radius: 4px;
@@ -74,7 +74,7 @@
 }
 
 
-.Home__Search__Inputs__booking::placeholder {
+.Home-Search-Inputs-booking::placeholder {
    color:  #a5a6ac;
    font-weight: 200;
     font-size: 19px;
@@ -82,16 +82,16 @@
     color: #484848;
 }
 
-.Home__Search__Inputs__booking:focus {
+.Home-Search-Inputs-booking:focus {
   border: 1px solid #3A3A4F;
   outline: none;
 }
 
-#guests__booking{
+#guests-booking{
   width: 100%;
 }
 
-#sign__button__booking  {
+#sign-button-booking  {
   height: 50px;
   width: 100%;
   margin-top: 25px;
@@ -108,18 +108,18 @@
   display: inline-block;
 }
 
-#sign__button__booking:hover {
+#sign-button-booking:hover {
     transform: translateY(-2px);
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
-.price__and__total__container{
+.price-and-total-container{
   display: flex;
 justify-items: space-around;
 }
 
 
-.price__container{
+.price-container{
   width: 50%;
 }
 

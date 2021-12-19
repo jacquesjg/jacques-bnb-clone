@@ -1,16 +1,25 @@
 import React, { useState, useEffect, createContext } from 'react';
 import Home from './components/Home/Home';
+import Signup from './components/Signup/Signup';
+import Signin from './components/Signin/Signin';
+import Logout from './components/Logout/Logout';
 import SearchResult from './components/SearchResult/SearchResult';
 import Header from './components/Header/Header';
 import Listing from './components/Listing/Listing';
+import Bookings from './components/Bookings/Bookings';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import jwt_decode from "jwt-decode";
+
 
 export const DataContext = createContext();
 
 
 function App() {
+  const [user, setUser] = useState(null);
   const [veniceArray, setVeniceArray] = useState([]);
   const [newYorkArray, setNewYorkArray] = useState([]);
   const [sanFranciscoArray, setSanFranciscoArray] = useState([]);
@@ -20,6 +29,22 @@ function App() {
 
   useEffect(() => {
     fetchListingData();
+    let jwtToken = window.localStorage.getItem("jwtToken")
+    if (jwtToken) {
+      let decodedToken = jwt_decode(jwtToken);
+      const currentTime = Date.now() / 1000;
+
+      if (decodedToken.exp < currentTime) {
+        window.localStorage.removeItem("jwtToken");
+        setUser(null);
+      } else {
+        setUser({
+          email: decodedToken.email,
+          username: decodedToken.username,
+          name: decodedToken.name
+        })
+      }
+    }
   }, []);
 
   function shuffle(array) {
@@ -69,18 +94,23 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer theme="colored" />
       <DataContext.Provider value={{ veniceArray, newYorkArray, sanFranciscoArray, shanghaiArray, capeTownArray, allListings }}>
-        < Router >
-          <Header />
+        <Router >
+          <Header user={user} />
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/sign-up" element={<Signup />} />
+            <Route exact path="/login" element={<Signin setUser={setUser} />} />
+            <Route exact path="/logout" element={<Logout setUser={setUser} />} />
             <Route exact path="/search-result/" element={<SearchResult />} />
-            <Route exact path="/listing/:listingID" element={<Listing />} />
+            <Route exact path="/listing/:listingID" element={<Listing user={user} />} />
+            <Route exact path="/my-bookings" element={<Bookings />} />
           </Routes>
         </Router >
       </DataContext.Provider>
 
-      {/* -Use React, Node.js, Express, and MongoDB
+      {/* -Use React, Node.js, Express, and MongoDB check
           -Authentication
           -JWT
           -Input Check

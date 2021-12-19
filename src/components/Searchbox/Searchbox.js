@@ -32,20 +32,20 @@ function Searchbox() {
 
 
   return (
-    <div className="Searchbox__Container" >
-      <div className="Searchbox__Contents">
-        <span id="Searchbox__Title">Book unique homes</span>
+    <div className="Searchbox-Container" >
+      <div className="Searchbox-Contents">
+        <span id="Searchbox-Title">Book unique homes</span>
 
         {/* Form below */}
         <form autoComplete="off" onSubmit={handleSubmit}>
 
 
-          <span id="Searcbox__Input__Label">WHERE</span>
+          <span id="Searcbox-Input-Label">WHERE</span>
           <Searchbar />
 
-          <span id="Searcbox__Input__Label">DATES</span>
+          <span id="Searcbox-Input-Label">DATES</span>
 
-          <div className="react__dates__container">
+          <div className="react-dates-container">
             <DateRangePicker withPortal
               startDate={startDate} // momentPropTypes.momentObj or null,
               startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
@@ -58,8 +58,8 @@ function Searchbox() {
           </div>
 
 
-          <span id="Searcbox__Input__Label">GUESTS</span>
-          <select id="guests" className="Home__Search__Inputs" value={guests} onChange={(e) => setGuests(e.target.value)}>
+          <span id="Searcbox-Input-Label">GUESTS</span>
+          <select id="guests" className="Home-Search-Inputs" value={guests} onChange={(e) => setGuests(e.target.value)}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -73,7 +73,7 @@ function Searchbox() {
           </select>
 
 
-          <button id="sign__button">Search</button>
+          <button id="sign-button">Search</button>
         </form>
       </div>
     </div>

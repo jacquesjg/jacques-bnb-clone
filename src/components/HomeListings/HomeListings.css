@@ -1,15 +1,15 @@
-.listing__link {
+.listing-link {
   color: #484848;
   text-decoration: none;
   line-height: 16px;
 }
 
-.listing__link:hover {
+.listing-link:hover {
   color: #484848;
   text-decoration: none;
 }
 
-.listing__city__title{
+.listing-city-title{
   margin-top: 32px;
   margin-left: 8px;
   margin-bottom: 10px;
@@ -19,7 +19,7 @@
   width: 300px;
 }
 
-.listing__row{
+.listing-row{
   display: flex;
   flex-direction: row;
   justify-items: center;
@@ -30,22 +30,22 @@
   overflow-y: hidden;
 }
 
-.listing__link{
+.listing-link{
   height: 285px;
 }
-.listing__container{
+.listing-container{
   display: flex;
   flex-direction: column;
   width: 295px;
 }
 
-.listing__container > img {
+.listing-container > img {
   width: 100%;
   height: 196px;
   border-radius: 8px 8px 1px 1px;
 }
 
-.type__and__city__container {
+.type-and-city-container {
   display: flex;
   flex-direction: row;
   text-transform: uppercase;
@@ -54,7 +54,7 @@
   margin-top: 5px;
 }
 
-.listing__name {
+.listing-name {
   font-size: 14px;
   font-weight: 800;
   letter-spacing: .5px;
@@ -62,18 +62,18 @@
   text-transform: capitalize;
 }
 
-.listing__price {
+.listing-price {
   font-size: 14px;
   font-weight: 400;
   margin-top: 2px;
 }
 
-.rating__container{
+.rating-container{
   display: flex;
   flex-direction: row;
 }
 
-.rating__number{
+.rating-number{
   margin-left: 3px;
   font-size: 12px;
   line-height: 18px;

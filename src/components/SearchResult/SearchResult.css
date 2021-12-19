@@ -1,4 +1,4 @@
-.map__and__listing__container{
+.map-and-listing-container{
   position: fixed;
   overflow-y: scroll;
   top: 80px;
@@ -6,7 +6,7 @@
   flex-direction: row;
 }
 
-.searched__listings{
+.searched-listings{
   
   top: 80px;
   height: calc(100vh - 80px);
@@ -24,6 +24,6 @@
   width: 400px;
   height: 360px;
 }
-#searched__image{
+#searched-image{
   height: 266px !important;
 }

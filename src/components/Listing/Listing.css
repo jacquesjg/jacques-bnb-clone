@@ -9,7 +9,7 @@
   margin-bottom: 0 !important;
 }
 
-.city__rating{
+.city-rating{
   color: #484848;
   margin-left: 2px;
   margin-bottom: 10px;
@@ -19,7 +19,7 @@
   align-items: center !important;
 }
 
-.left__right__container{
+.left-right-container{
   width: 84%;
   display: flex;
   flex-direction: row;
@@ -28,18 +28,18 @@
   padding-top: 20px;
 }
 
-.left__container{
+.left-container{
   width: 55%;
   display: flex;
   flex-direction: column;
 }
 
-.right__container{
+.right-container{
   width: 35%;
   margin-right: 70px;
 }
 
-.type__and__hood{
+.type-and-hood{
   color: #484848;
   width: 100%;
   margin-top: 15px;
@@ -53,7 +53,7 @@
 }
 
 
-.amenity__item{
+.amenity-item{
   color: #484848;
   width: 50%;
   margin: 0;
@@ -64,20 +64,20 @@
   color: #484848;
 }
 
-.rating__section {
+.rating-section {
   width: 84%;
   display: flex;
   flex-direction: column;
 
 }
 
-.rating__section__ratings{
+.rating-section-ratings{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.rating__section__item{
+.rating-section-item{
   display: flex;
   flex-direction: row;
   width: 45%;
@@ -86,7 +86,7 @@
   color: #484848;
 }
 
-.rating__bar__container{
+.rating-bar-container{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -100,12 +100,12 @@
   margin-right: 2px;
 }
 
-.rating__section__reviews{
+.rating-section-reviews{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.review__container{
+.review-container{
   display: flex;
   flex-direction: column;
   width: 45%;
@@ -113,30 +113,30 @@
   color: #484848;;
 }
 
-.user__date__pic__container{
+.user-date-pic-container{
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 40%;
 }
-.name__date__container{
+.name-date-container{
   display: flex;
   flex-direction: column;
 }
 
-.profile__picture{
+.profile-picture{
   height: 60px;
   width: 60px;
   border-radius: 40px;
   margin-right: 10px;
 }
 
-.review__name {
+.review-name {
   font-size: 20px;
   font-weight: 600;
 }
 
-.review__date {
+.review-date {
   font-size: 12px;
   font-weight: 200;
 }

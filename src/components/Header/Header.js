@@ -5,11 +5,16 @@ import redbnb from '../Images/redbnb.png';
 import { Link, useLocation } from "react-router-dom"
 import './Header.css';
 
-function Header() {
+function Header({ user }) {
   const location = useLocation();
+  let link1 = user ? "/my-bookings" : "/sign-up";
+  let link1Text = user ? "My Bookings" : "Sign up"
+  let link2 = user ? "/logout" : "/login";
+  let link2Text = user ? "Logout" : "Login";
+
   return (
     <div className='header'>
-      <div className='logo__search__container'>
+      <div className='logo-search-container'>
         <Link to="/">
           <img
             className="logo"
@@ -22,10 +27,10 @@ function Header() {
       </div>
 
 
-      <div className="links__container">
-        <ul className="nav__links" >
-          <Link className="header__button" to="/login" style={location.pathname !== "/" ? { color: 'black' } : { color: "white" }}><li>Login</li></Link>
-          <Link className="header__button" to="/sign-up" style={location.pathname !== "/" ? { color: 'black' } : { color: "white" }}><li>Sign up</li></Link>
+      <div className="links-container">
+        <ul className="nav-links" >
+          <Link className="header-button" to={link1} style={location.pathname !== "/" ? { color: "#FF5A5F", fontWeight: 250 } : { color: "white" }}><li>{link1Text}</li></Link>
+          <Link className="header-button" to={link2} style={location.pathname !== "/" ? { color: "#FF5A5F", fontWeight: 250 } : { color: "white" }}><li>{link2Text}</li></Link>
         </ul>
       </div>
     </div>
