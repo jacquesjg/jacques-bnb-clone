@@ -1,0 +1,128 @@
+/* react dates css overrides */
+
+.DateInput {
+  width: 150px;
+}
+
+.DateRangePickerInput__withBorder {
+  border: 0px;
+}
+
+.react-dates-container-booking{
+   border: 1.5px solid #eee;
+  border-radius: 4px;
+}
+
+
+/* searchbox css below (no react dates */
+
+.Searchbox-Container-booking{
+  background-color: white;
+  opacity: 0.98;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+}
+
+.Searchbox-Contents-booking{
+  padding-right: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.price{
+  margin-left: 10px;
+  color: #484848;
+  font-size: 19px;
+  font-weight: 200;
+}
+
+#Searchbox-Title-booking{
+  font-size: 30px;
+  font-weight: bold;
+  color: #484848;
+}
+
+#Searcbox-Input-Label-booking{
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1px;
+  color: #484848;
+  font-weight: 800;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.Home-Search-Inputs-booking {
+  background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color:  #a5a6ac;
+    font-weight: 200;
+    font-size: 19px;
+    line-height: 24px;
+    color: #484848;
+    height: 50px;
+    padding: 0px 10px;
+    -webkit-transition: border 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
+    transition: border 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;
+
+    
+}
+
+
+.Home-Search-Inputs-booking::placeholder {
+   color:  #a5a6ac;
+   font-weight: 200;
+    font-size: 19px;
+    line-height: 24px;
+    color: #484848;
+}
+
+.Home-Search-Inputs-booking:focus {
+  border: 1px solid #3A3A4F;
+  outline: none;
+}
+
+#guests-booking{
+  width: 100%;
+}
+
+#sign-button-booking  {
+  height: 50px;
+  width: 100%;
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: white;
+  background-color: #FF5A5F;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) ;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  cursor: pointer;
+  display: inline-block;
+}
+
+#sign-button-booking:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.price-and-total-container{
+  display: flex;
+justify-items: space-around;
+}
+
+
+.price-container{
+  width: 50%;
+}
+
+.total{
+  font-weight: 320;
+}

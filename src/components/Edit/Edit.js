@@ -3,19 +3,16 @@ import axios from 'axios';
 import { StarOutline, Wifi, LocalParking, Kitchen, Tv, Microwave, OutdoorGrill, HotTub, DateRange, LocalLaundryService, AcUnit, Hvac } from '@mui/icons-material';
 import { Container, Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import BookingBox from '../BookingBox/BookingBox';
+import BookingBoxEdit from './BookingBoxEdit';
 import img1 from "../Images/1.png"; import img2 from "../Images/2.png"; import img3 from "../Images/3.png"; import img4 from "../Images/4.png"; import img5 from "../Images/5.png"; import img6 from "../Images/6.png";
-import './Listing.css';
+import '../Listing/Listing.css';
 var humanNames = require('human-names');
 var moment = require('moment');
 
 function Listing({ user }) {
 
-  const { listingID } = useParams();
-
+  const { listingID, bookingID } = useParams();
   const [listings, setListings] = useState([]);
-
-
 
 
   useEffect(() => {
@@ -171,13 +168,14 @@ function Listing({ user }) {
               </div>
 
               <div className="right-container">
-                <BookingBox
+                <BookingBoxEdit
                   user={user}
                   price={listing.price}
                   name={listing.name}
                   city={listing.neighbourhood ? listing.neighbourhood : listing.neighbourhood_cleansed}
                   picture={listing.picture_url}
                   listingID={listing.id}
+                  bookingID={bookingID}
                 />
               </div>
 

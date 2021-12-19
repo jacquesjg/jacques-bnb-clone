@@ -7,6 +7,7 @@ import SearchResult from './components/SearchResult/SearchResult';
 import Header from './components/Header/Header';
 import Listing from './components/Listing/Listing';
 import Bookings from './components/Bookings/Bookings';
+import Edit from './components/Edit/Edit';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -106,6 +107,7 @@ function App() {
             <Route exact path="/search-result/" element={<SearchResult />} />
             <Route exact path="/listing/:listingID" element={<Listing user={user} />} />
             <Route exact path="/my-bookings" element={<Bookings />} />
+            <Route exact path="/edit/:listingID/:bookingID" element={<Edit user={user} />} />
           </Routes>
         </Router >
       </DataContext.Provider>

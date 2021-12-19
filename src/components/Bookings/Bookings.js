@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import moment from 'moment';
 import "./Bookings.css";
+import { useNavigate } from 'react-router-dom';
 
 
 function Bookings() {
+  const navigate = useNavigate();
   const [bookings, setBookings] = useState(null);
   useEffect(() => { getAllUserBookings() }, [])
 
@@ -19,6 +20,10 @@ function Bookings() {
     setBookings(result.data.payload);
   }
 
+  const handleEditOnClick = (booking) => {
+    navigate(`/edit/${booking.listingID}/${booking._id}`)
+  }
+
   return (
     <>
       <div className='flexTitle'>
@@ -26,9 +31,9 @@ function Bookings() {
       </div>
 
       <div className="listing-row booking-page">
-        {bookings ? bookings.map((booking) =>
+        {bookings ? bookings.map((booking, index) =>
 
-          <div className="listing-container booking-container">
+          <div key={index} className="listing-container booking-container">
 
 
             <div className="type-and-city-container booking-flex">
@@ -46,9 +51,8 @@ function Bookings() {
             <div className='listing-name listing-booking'>
               {booking.name}
             </div>
-
             <div className='booking-button-container'>
-              <button className='booking-button' style={{ backgroundColor: "darkgrey" }}>Edit</button>  <button className='booking-button'>Cancel</button>
+              <button className='booking-button' style={{ backgroundColor: "darkgrey" }} onClick={() => handleEditOnClick(booking)}>Edit</button>  <button className='booking-button'>Cancel</button>
             </div>
 
 
