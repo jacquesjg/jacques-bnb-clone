@@ -15,7 +15,6 @@ const mapContainerStyle = {
 function Map() {
   const { allListings } = useContext(DataContext);
   const { destination, searchDestinationHandler } = useContext(SearchContext);
-  console.log(destination)
 
   const [selected, setSelected] = useState(null)
 

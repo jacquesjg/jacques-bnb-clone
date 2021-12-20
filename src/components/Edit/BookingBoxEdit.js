@@ -14,7 +14,7 @@ const MomentRange = require('moment-range');
 
 const moment = MomentRange.extendMoment(Moment);
 
-function BookingBoxEdit({ user, price, name, city, picture, listingID, bookingID }) {
+function BookingBoxEdit({ user, price, listingID, bookingID }) {
   const { guests, startDate, endDate, searchStartDateHandler, searchEndDateHandler, searchGuestHandler } = useContext(SearchContext);
   const [total, setTotal] = useState(price);
   const [bookings, setBookings] = useState([]);
@@ -44,7 +44,7 @@ function BookingBoxEdit({ user, price, name, city, picture, listingID, bookingID
   };
 
   const getBookingsForThisListing = async () => {
-    const result = await axios.get(`http://localhost:3001/api/bookings/get-bookings-for-listing/${listingID}`);
+    const result = await axios.get(`https://luxe-bnb.herokuapp.com/api/bookings/get-bookings-for-listing/${listingID}`);
     setBookings(result.data.allBookings);
   }
 
@@ -53,7 +53,7 @@ function BookingBoxEdit({ user, price, name, city, picture, listingID, bookingID
     try {
 
       if (!user) {
-        toast.success(`Please Sign in to Book Listing`, {
+        toast.success(`You do not have permission`, {
           position: "top-center",
           autoClose: 3000,
           hideProgressBar: false,
@@ -64,26 +64,15 @@ function BookingBoxEdit({ user, price, name, city, picture, listingID, bookingID
         });
 
       } else {
-        let jwtToken = window.localStorage.getItem("jwtToken");
-        // set up jwtoken for post
-        const config = {
-          headers: { Authorization: `Bearer ${jwtToken}` }
-        };
 
-        const payload = await axios.post("http://localhost:3001/api/bookings/create-booking", {
-
-          name: name,
-          city: city,
+        const payload = await axios.post(`https://luxe-bnb.herokuapp.com/api/bookings/find-booking-by-id-and-update/${bookingID}`, {
           startDate: startDate,
           endDate: endDate,
-          price: price,
-          picture: picture,
           guests: guests,
-          listingID: listingID,
 
-        }, config)
+        })
 
-        toast.success(`Congrats! Your trip has been successfully booked!`, {
+        toast.success(`Congrats! Your trip has been successfully updated!`, {
           position: "top-center",
           autoClose: 3000,
           hideProgressBar: false,
@@ -125,9 +114,7 @@ function BookingBoxEdit({ user, price, name, city, picture, listingID, bookingID
       let tripLength = b.diff(a, 'days');
       let fixedPriceFormat = price.replace(/[,$]/g, '')
 
-      console.log(fixedPriceFormat);
       let tripCost = fixedPriceFormat * tripLength;
-      console.log(tripCost)
       let fixedTripCostFormat = (tripCost).toLocaleString('en-US', {
         style: 'currency',
         currency: 'USD',

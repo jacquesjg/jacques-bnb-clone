@@ -28,11 +28,6 @@ function Listing({ user }) {
     }
   }
 
-  /* Calculate Days like this */
-  // let a = moment(startDate);
-  // let b = moment(endDate);
-  // console.log(b.diff(a, 'days'));
-
   return (
     <div className='listings-page-container'>
 
@@ -171,9 +166,6 @@ function Listing({ user }) {
                 <BookingBoxEdit
                   user={user}
                   price={listing.price}
-                  name={listing.name}
-                  city={listing.neighbourhood ? listing.neighbourhood : listing.neighbourhood_cleansed}
-                  picture={listing.picture_url}
                   listingID={listing.id}
                   bookingID={bookingID}
                 />
@@ -320,28 +312,6 @@ function Listing({ user }) {
       }
 
 
-      {/* 
-
-
-      {console.log(currentListing.description)}
-      {console.log(currentListing.bedrooms)}
-      {console.log(currentListing.beds)}
-      {console.log(currentListing.bathrooms_text)}
-      {console.log(currentListing.amenities)}
-      {console.log(currentListing.price)}
-      {console.log(currentListing.review_scores_rating)} */}
-
-      {/* <Wifi />
-      <LocalParking />
-      <Kitchen />
-      <Tv />
-      <Microwave />
-      <OutdoorGrill />
-      <HotTub />
-      <DateRange />
-      <LocalLaundryService />
-      <AcUnit />
-      <Hvac /> */}
 
     </div >
   )

@@ -12,6 +12,7 @@ function Header({ user }) {
   let link2 = user ? "/logout" : "/login";
   let link2Text = user ? "Logout" : "Login";
 
+
   return (
     <div className='header'>
       <div className='logo-search-container'>
@@ -26,9 +27,9 @@ function Header({ user }) {
         {location.pathname === "/" ? null : <Searchbar />}
       </div>
 
-
       <div className="links-container">
         <ul className="nav-links" >
+          {user ? null : <Link className="header-button blink" to={"/demo"} style={location.pathname !== "/" ? { color: "#FF5A5F", fontWeight: 250 } : { color: "white" }}><li id="demo"> Demo </li></Link>}
           <Link className="header-button" to={link1} style={location.pathname !== "/" ? { color: "#FF5A5F", fontWeight: 250 } : { color: "white" }}><li>{link1Text}</li></Link>
           <Link className="header-button" to={link2} style={location.pathname !== "/" ? { color: "#FF5A5F", fontWeight: 250 } : { color: "white" }}><li>{link2Text}</li></Link>
         </ul>

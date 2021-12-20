@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import logo from '../Images/redbnb.png'
@@ -6,10 +6,10 @@ import "../Signup/Signup.css";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from 'react-router-dom';
 
-export default function Signin({ setUser }) {
+export default function Demo({ setUser }) {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('Demo@Demo.com');
+  const [password, setPassword] = useState('Doooooo@2');
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
@@ -42,6 +42,32 @@ export default function Signin({ setUser }) {
     }
   }
 
+
+  useEffect(() => {
+
+    var email1 = document.getElementById("email");
+    var password1 = document.getElementById("password");
+    function wait(ms) {
+      return new Promise(function (resolve) {
+        setTimeout(resolve, ms);
+      })
+    }
+
+    async function simulateTyping(element, text, delay) {
+      text = text.split("");
+
+      for (var i = 0; i < text.length; i++) {
+        element.value += text[i];
+        await wait(delay);
+      }
+    }
+
+    simulateTyping(email1, "Demo@Demo.com", 300);
+    simulateTyping(password1, "Doooooo@2", 500);
+
+
+
+  }, [])
 
   return (
     <>

@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.65e8b1ec.css",
+    "main.js": "/static/js/main.023138ab.js",
+    "static/media/african_treehouse.jpeg": "/static/media/african_treehouse.af47bf2a9f44f58921d1.jpeg",
+    "static/media/4.png": "/static/media/4.11c308b620513ea789f0.png",
+    "static/media/5.png": "/static/media/5.89d41b981be4a9a78cf5.png",
+    "static/media/6.png": "/static/media/6.21b766fa345911588697.png",
+    "static/media/1.png": "/static/media/1.66deff0e6dc95612dd36.png",
+    "static/media/2.png": "/static/media/2.ed2ffa2b3c0222505609.png",
+    "static/media/3.png": "/static/media/3.6d0d321ac69f87543a54.png",
+    "static/media/redbnb.png": "/static/media/redbnb.311ed5d5247f1072068a.png",
+    "index.html": "/index.html",
+    "main.65e8b1ec.css.map": "/static/css/main.65e8b1ec.css.map",
+    "main.023138ab.js.map": "/static/js/main.023138ab.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65e8b1ec.css",
+    "static/js/main.023138ab.js"
+  ]
+}

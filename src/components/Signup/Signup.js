@@ -28,10 +28,9 @@ export default function Signup() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(e.target)
     try {
       const payload = await axios.post(
-        "http://localhost:3001/api/users/create-user", {
+        "https://luxe-bnb.herokuapp.com/api/users/create-user", {
         firstName,
         lastName,
         username,

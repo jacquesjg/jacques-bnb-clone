@@ -39,7 +39,7 @@ function BookingBox({ user, price, name, city, picture, listingID }) {
   };
 
   const getBookingsForThisListing = async () => {
-    const result = await axios.get(`http://localhost:3001/api/bookings/get-bookings-for-listing/${listingID}`);
+    const result = await axios.get(`https://luxe-bnb.herokuapp.com/api/bookings/get-bookings-for-listing/${listingID}`);
     setBookings(result.data.allBookings);
   }
 
@@ -65,7 +65,7 @@ function BookingBox({ user, price, name, city, picture, listingID }) {
           headers: { Authorization: `Bearer ${jwtToken}` }
         };
 
-        const payload = await axios.post("http://localhost:3001/api/bookings/create-booking", {
+        const payload = await axios.post("https://luxe-bnb.herokuapp.com/api/bookings/create-booking", {
 
           name: name,
           city: city,
@@ -120,9 +120,7 @@ function BookingBox({ user, price, name, city, picture, listingID }) {
       let tripLength = b.diff(a, 'days');
       let fixedPriceFormat = price.replace(/[,$]/g, '')
 
-      console.log(fixedPriceFormat);
       let tripCost = fixedPriceFormat * tripLength;
-      console.log(tripCost)
       let fixedTripCostFormat = (tripCost).toLocaleString('en-US', {
         style: 'currency',
         currency: 'USD',

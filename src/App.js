@@ -7,6 +7,7 @@ import SearchResult from './components/SearchResult/SearchResult';
 import Header from './components/Header/Header';
 import Listing from './components/Listing/Listing';
 import Bookings from './components/Bookings/Bookings';
+import Demo from './components/Signin/Demo';
 import Edit from './components/Edit/Edit';
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -21,6 +22,7 @@ export const DataContext = createContext();
 
 function App() {
   const [user, setUser] = useState(null);
+  const [isDemo, setIsDemo] = useState(false);
   const [veniceArray, setVeniceArray] = useState([]);
   const [newYorkArray, setNewYorkArray] = useState([]);
   const [sanFranciscoArray, setSanFranciscoArray] = useState([]);
@@ -46,7 +48,7 @@ function App() {
         })
       }
     }
-  }, []);
+  }, [isDemo]);
 
   function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -98,11 +100,12 @@ function App() {
       <ToastContainer theme="colored" />
       <DataContext.Provider value={{ veniceArray, newYorkArray, sanFranciscoArray, shanghaiArray, capeTownArray, allListings }}>
         <Router >
-          <Header user={user} />
+          <Header user={user} setisDemo={setIsDemo} />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/sign-up" element={<Signup />} />
             <Route exact path="/login" element={<Signin setUser={setUser} />} />
+            <Route exact path="/demo" element={<Demo setUser={setUser} />} />
             <Route exact path="/logout" element={<Logout setUser={setUser} />} />
             <Route exact path="/search-result/" element={<SearchResult />} />
             <Route exact path="/listing/:listingID" element={<Listing user={user} />} />
