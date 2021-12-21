@@ -75,3 +75,12 @@
   height: 42px;
 }
 
+
+
+
+@media screen and (max-width: 480px) { 
+  #root > div > div.listing-row.booking-page{
+
+    height: 100vh;
+  }
+}

@@ -6,9 +6,9 @@ import ReactStars from "react-rating-stars-component";
 import {
   headingDistanceTo
 } from 'geolocation-utils';
-
-import Map from '../Map/Map';
 import './SearchResult.css';
+import Media from 'react-media';
+import zIndex from '@mui/material/styles/zIndex';
 
 function SearchResult() {
   const { allListings } = useContext(DataContext)
@@ -23,48 +23,51 @@ function SearchResult() {
   })
 
   return (
-    <div className='map-and-listing-container'>
-      <div className='searched-listings'>
-        {nearListings.map((listing) =>
-          <Link className='listing-link result searched' to={`/listing/${listing.id}`} key={listing.id}>
-            <div className="listing-container searched">
+    <>
+      <div className='contain-all-test'>
+        <div className='map-and-listing-container'>
+          <div className='searched-listings'>
+            {nearListings.map((listing) =>
+              <Link className='listing-link result searched' to={`/listing/${listing.id}`} key={listing.id}>
+                <div className="listing-container searched">
 
 
-              <img src={listing.picture_url} id="searched-image" alt="listing preview" />
+                  <img src={listing.picture_url} id="searched-image" alt="listing preview" />
 
 
-              <div className="type-and-city-container">
-                {listing.property_type} • {listing.neighbourhood_cleansed}
-              </div>
+                  <div className="type-and-city-container">
+                    {listing.property_type} • {listing.neighbourhood_cleansed}
+                  </div>
 
 
-              <div className='listing-name'>
-                {listing.name}
-              </div>
+                  <div className='listing-name'>
+                    {listing.name}
+                  </div>
 
 
-              <div className="listing-price">
-                {listing.price} per night
-              </div>
+                  <div className="listing-price">
+                    {listing.price} per night
+                  </div>
 
 
-              <div className="rating-container">
-                <ReactStars
-                  size={14}
-                  value={typeof (listing.review_scores_rating) === "number" ? listing.review_scores_rating : 0}
-                  edit={false}
-                  isHalf={true}
-                />
-                <span className='rating-number'>{listing.review_scores_rating}</span>
-              </div>
+                  <div className="rating-container">
+                    <ReactStars
+                      size={14}
+                      value={typeof (listing.review_scores_rating) === "number" ? listing.review_scores_rating : 0}
+                      edit={false}
+                      isHalf={true}
+                    />
+                    <span className='rating-number'>{listing.review_scores_rating}</span>
+                  </div>
 
 
-            </div>
-          </Link>
-        )}
+                </div>
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
-      <Map />
-    </div>
+    </>
   )
 }
 

@@ -78,3 +78,40 @@
   font-size: 12px;
   line-height: 18px;
 }
+
+
+
+
+@media screen and (max-width: 480px) { 
+
+.listing-row{
+  grid-template-columns: repeat(auto-fill, minmax(428px, 1fr));
+  height: 400px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.listing-city-title{
+  margin-left: 12vw;
+}
+
+.listing-link{
+  height: 400px;
+}
+.listing-container{
+  display: flex;
+  flex-direction: column;
+  width: 428px;
+  
+}
+
+.listing-container > img {
+  height: 284px;
+  border-radius: 1px 8px 1px 1px;
+}
+
+.home-listing-phone-margin {
+margin-left: 20px !important;
+}
+
+}

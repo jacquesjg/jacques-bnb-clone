@@ -15,8 +15,6 @@ export default function Signin({ setUser }) {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      console.log(email)
-      console.log(password)
       const payload = await axios.post("https://luxe-bnb.herokuapp.com/api/users/login", {
         email,
         password,

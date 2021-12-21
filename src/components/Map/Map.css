@@ -9,4 +9,33 @@
 
 .map-container > div {
   border-radius: 10px;
+  height: calc(100vh - 80px);
+
+}
+
+
+@media screen and (max-width: 480px) { 
+  .map-container{
+  width: 100vw;
+  left: 0;
+  top: 0,
+  }
+  .map-container > div {
+    border-radius: 10px;
+    height: calc(100vh - 80px);
+  
+  }
+  #map-listing{
+    width: 200px;
+    margin-left: 0px
+
+
+
+  }
+  #map-listing > img{
+    height: 150px;
+    width: 200px;
+  }
+
+  
 }

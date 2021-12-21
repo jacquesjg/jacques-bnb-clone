@@ -3,7 +3,6 @@ import Home from './components/Home/Home';
 import Signup from './components/Signup/Signup';
 import Signin from './components/Signin/Signin';
 import Logout from './components/Logout/Logout';
-import SearchResult from './components/SearchResult/SearchResult';
 import Header from './components/Header/Header';
 import Listing from './components/Listing/Listing';
 import Bookings from './components/Bookings/Bookings';
@@ -15,6 +14,7 @@ import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import jwt_decode from "jwt-decode";
+import MapToggler from './components/MapToggler/MapToggler';
 
 
 export const DataContext = createContext();
@@ -107,7 +107,7 @@ function App() {
             <Route exact path="/login" element={<Signin setUser={setUser} />} />
             <Route exact path="/demo" element={<Demo setUser={setUser} />} />
             <Route exact path="/logout" element={<Logout setUser={setUser} />} />
-            <Route exact path="/search-result/" element={<SearchResult />} />
+            <Route exact path="/search-result/" element={<MapToggler />} />
             <Route exact path="/listing/:listingID" element={<Listing user={user} />} />
             <Route exact path="/my-bookings" element={<Bookings />} />
             <Route exact path="/edit/:listingID/:bookingID" element={<Edit user={user} />} />

@@ -9,6 +9,7 @@ import { Container } from '@mui/material';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import './BookingBox.css';
+import Media from 'react-media';
 const Moment = require('moment');
 const MomentRange = require('moment-range');
 
@@ -64,6 +65,8 @@ function BookingBox({ user, price, name, city, picture, listingID }) {
         const config = {
           headers: { Authorization: `Bearer ${jwtToken}` }
         };
+        searchStartDateHandler(null);
+        searchEndDateHandler(null);
 
         const payload = await axios.post("https://luxe-bnb.herokuapp.com/api/bookings/create-booking", {
 
@@ -77,6 +80,8 @@ function BookingBox({ user, price, name, city, picture, listingID }) {
           listingID: listingID,
 
         }, config)
+
+
 
         toast.success(`Congrats! Your trip has been successfully booked!`, {
           position: "top-center",
@@ -145,16 +150,34 @@ function BookingBox({ user, price, name, city, picture, listingID }) {
           <span id="Searcbox-Input-Label-booking">DATES</span>
 
           <div className="react-dates-container-booking">
-            <DateRangePicker withPortal
-              startDate={startDate && startDate.length != 0 ? moment(startDate) : null} // momentPropTypes.momentObj or null,
-              startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-              endDate={endDate && endDate.length != 0 ? moment(endDate) : null} // momentPropTypes.momentObj or null,
-              endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-              onDatesChange={({ startDate, endDate }) => handleDateChange({ startDate, endDate })} // PropTypes.func.isRequired,
-              focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-              onFocusChange={focusedInput => setFocusedInput(focusedInput)} // PropTypes.func.isRequired,
-              isDayBlocked={isBlocked}
-            />
+            <Media query="( max-width: 480px )">
+              {(matches) => {
+                return matches ?
+
+                  <DateRangePicker orientation="vertical" withFullScreenPortal autoFocus
+                    startDate={startDate && startDate.length != 0 ? moment(startDate) : null} // momentPropTypes.momentObj or null,
+                    startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                    endDate={endDate && endDate.length != 0 ? moment(endDate) : null}// momentPropTypes.momentObj or null,
+                    endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                    onDatesChange={({ startDate, endDate }) => handleDateChange({ startDate, endDate })} // PropTypes.func.isRequired,
+                    focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                    onFocusChange={focusedInput => setFocusedInput(focusedInput)} // PropTypes.func.isRequired,
+                    displayFormat="MMM D"
+                    isDayBlocked={isBlocked}
+                  />
+                  :
+                  <DateRangePicker withPortal
+                    startDate={startDate && startDate.length != 0 ? moment(startDate) : null} // momentPropTypes.momentObj or null,
+                    startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                    endDate={endDate && endDate.length != 0 ? moment(endDate) : null} // momentPropTypes.momentObj or null,
+                    endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                    onDatesChange={({ startDate, endDate }) => handleDateChange({ startDate, endDate })} // PropTypes.func.isRequired,
+                    focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                    onFocusChange={focusedInput => setFocusedInput(focusedInput)} // PropTypes.func.isRequired,
+                    isDayBlocked={isBlocked}
+                  />
+              }}
+            </Media>
           </div>
 
 

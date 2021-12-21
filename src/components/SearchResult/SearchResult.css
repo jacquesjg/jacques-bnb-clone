@@ -1,19 +1,27 @@
+/* .search-result-page-container {
+  width: 100vh;
+  height: calc(100vh - 80px);
+  position: absolute;
+  background-color: black;
+
+} */
+
 .map-and-listing-container{
-  position: fixed;
+  position: absolute;
   overflow-y: scroll;
-  top: 80px;
+  margin-top: 80px;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .searched-listings{
   
-  top: 80px;
-  height: calc(100vh - 80px);
   width: 60vw;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(407px, 1fr));
   justify-items: center;
+  align-self: center;
 }
 
 .result {
@@ -27,3 +35,51 @@
 #searched-image{
   height: 266px !important;
 }
+
+@media screen and (max-width: 480px) { 
+  .map-and-listing-container{
+    position: absolute;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    height: min-content;
+    width: min-content;
+    width: 100vw;
+
+  }
+  .searched-listings{
+    /* height: calc(100vh - 80px); */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)) !important;
+    width: 100vw !important;
+    overflow-y: scroll !important;
+    height: min-content;
+    
+  }
+  
+  .contain-all-test{
+    display: flex;
+  }
+  .relative-container {
+    pointer-events: none;
+  }
+  .listing-name-search{
+    width: 375px !important;
+  }
+
+  .listing-row{
+    overflow-x: hidden;
+  }
+
+}
+
+
+@media only screen and (max-width: 428px) and (min-width: 375px) {
+  .searched-listings{
+    /* height: calc(100vh - 80px); */
+    grid-template-columns: repeat(auto-fill, minmax(428px, 1fr));
+    width: min-content;
+    overflow-y: scroll;
+    height: min-content;
+    
+  }
+} 

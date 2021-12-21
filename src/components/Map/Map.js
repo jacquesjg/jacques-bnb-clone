@@ -53,28 +53,28 @@ function Map() {
             onCloseClick={() => setSelected(null)}
           >
             <Link className='listing-link' to={`/listing/${selected.id}`} key={selected.id}>
-              <div className="listing-container">
+              <div className="listing-container" id={"map-listing"}>
 
 
                 <img src={selected.picture_url} alt="listing preview" />
 
 
-                <div className="type-and-city-container">
+                <div className="type-and-city-container" id={"map-listing"}>
                   {selected.property_type} • {selected.neighbourhood_cleansed}
                 </div>
 
 
-                <div className='listing-name'>
+                <div className='listing-name' id={"map-listing"}>
                   {selected.name}
                 </div>
 
 
-                <div className="listing-price">
+                <div className="listing-price" id={"map-listing"}>
                   {selected.price} per night
                 </div>
 
 
-                <div className="rating-container">
+                <div className="rating-container" id={"map-listing"}>
                   <ReactStars
                     size={14}
                     value={typeof (selected.review_scores_rating) === "number" ? selected.review_scores_rating : 0}

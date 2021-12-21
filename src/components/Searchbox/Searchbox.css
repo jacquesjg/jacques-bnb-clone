@@ -114,3 +114,60 @@
 
 
 
+@media screen and (max-width: 480px) { 
+  #Searchbox-Title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #484848;
+  }
+  
+  .Searchbox-Container{
+    padding-top: 5px;
+    padding-left: 6px;
+    padding-bottom: 5px;
+    width: 305px;
+    height: min-content;
+    background-color: white;
+    opacity: 0.97;
+    margin-left: 0;
+    margin-bottom: 14vh;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .Searchbox-Contents{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #Searcbox-Input-Label{
+    width: 50px;
+  }
+  
+  
+  #sign-button  {
+    width: 270px;
+  }
+
+  .Home-Search-Inputs {
+    width: 180px !important;     
+  }
+
+  .Home-Search-Inputs {
+    width: 270px !important;     
+  }
+
+
+  .react-dates-container{
+    width: 270px;
+  }
+  .DateInput.DateInput_1 {
+    width: 121px;
+  }
+
+  .DateInput_input_1{
+    width: 121px;
+  }
+
+  
+}

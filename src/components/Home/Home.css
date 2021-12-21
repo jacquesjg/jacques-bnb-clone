@@ -1,4 +1,4 @@
-.homtest{
+.homtest {
   display: flex;
   flex-direction: column;
   height: max-content;
@@ -9,11 +9,11 @@
   padding-bottom: 50px;
 }
 
-.home{
+.home {
   background-image: url("../Images/african_treehouse.jpeg");
   width: calc(100vw - var(--scrollbar-width));
   height: 100vh;
-  max-width:100%; 
+  max-width: 100%;
   background-size: cover;
   background-position: center;
 
@@ -22,4 +22,42 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+
+@media screen and (max-width: 480px) {
+  .home {
+    
+    height: 100vh;
+    width: 100vw;
+    background-size: 520%;
+    background-position: 70% -250px;
+    /* for Searchbox.js alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+  }
+
+
+    .type-and-city-container{
+      margin-left: 10px;
+    }
+    .listing-name{
+      margin-left: 10px;
+      width: 375px;
+    }
+    .listing-price{
+      margin-left: 10px;
+    }
+    
+    .rating-container{
+      margin-left: 10px;
+    }
+
+
+
+  }
+
+  .homtest {}
 

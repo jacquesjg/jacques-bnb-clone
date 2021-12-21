@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useNavigate, useLocation } from 'react-router-dom';
 import usePlacesAutocomplete, { getGeocode, getLatLng, } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption, } from "@reach/combobox";
 import { SearchContext } from "../../../context/searchContext";
@@ -8,6 +9,8 @@ import "@reach/combobox/styles.css";
 function Searchbar() {
 
   const searchContext = useContext(SearchContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const {
     ready,
@@ -28,6 +31,7 @@ function Searchbar() {
   const handleSelect = async (address) => {
     setValue(address, false);
     clearSuggestions();
+
   };
 
   const handleOnBlur = async (address) => {
@@ -38,7 +42,9 @@ function Searchbar() {
       const results = await getGeocode({ address });
       const { lat, lng } = await getLatLng(results[0]);
       searchContext.searchDestinationHandler({ lat: lat, lng: lng });
-      /* panTo({ lat, lng }); */
+      if (location.pathname !== "/") {
+        navigate("/search-result")
+      }
     } catch (e) {
       console.log("error:", e.message);
     }
@@ -55,7 +61,7 @@ function Searchbar() {
           placeholder="Try New York"
           onBlur={handleOnBlur}
         />
-        <ComboboxPopover>
+        <ComboboxPopover style={{ zIndex: 20 }}>
           <ComboboxList>
             {status === "OK" &&
               data.map(({ description }, index) => (

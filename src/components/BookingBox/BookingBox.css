@@ -126,3 +126,15 @@ justify-items: space-around;
 .total{
   font-weight: 320;
 }
+
+@media screen and (max-width: 480px)  and (max-width: 768px) { 
+  .Searchbox-Container-booking{
+    width: max-content!important;
+    height: min-content !important;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  
+}

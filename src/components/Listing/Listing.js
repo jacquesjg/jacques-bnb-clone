@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import BookingBox from '../BookingBox/BookingBox';
 import img1 from "../Images/1.png"; import img2 from "../Images/2.png"; import img3 from "../Images/3.png"; import img4 from "../Images/4.png"; import img5 from "../Images/5.png"; import img6 from "../Images/6.png";
 import './Listing.css';
+import { ReadMoreMore } from 'read-more-more';
 var humanNames = require('human-names');
 var moment = require('moment');
 
@@ -49,7 +50,7 @@ function Listing({ user }) {
 
 
             <div className="my_info">
-              {listing.name}
+              <span id="listing-page-listing-name">{listing.name}</span>
               <div className="city-rating">
                 <StarOutline style={{ color: "#FF5A5F", fontSize: "16px", lineHeight: "20px !important" }} />
                 {listing.review_scores_rating ? `Rating: ${listing.review_scores_rating}` : null} {listing.neighbourhood ? `• ${listing.neighbourhood}` : `• ${listing.neighbourhood_cleansed}`}
@@ -105,7 +106,7 @@ function Listing({ user }) {
 
                     if (item === "Long term stays allowed") {
                       return <div className="amenity-item">
-                        <DateRange style={{ color: "#FF5A5F" }} /> {item}
+                        <DateRange style={{ color: "#FF5A5F" }} /> {"Long term stays"}
                       </div>
                     }
 
@@ -129,7 +130,7 @@ function Listing({ user }) {
 
                     if ((item === "Free parking on premises") || (item === "Free street parking")) {
                       return <div className="amenity-item">
-                        <LocalParking style={{ color: "#FF5A5F" }} /> {item}
+                        <LocalParking style={{ color: "#FF5A5F" }} /> {"Free parking"}
                       </div>
                     }
 
@@ -159,7 +160,7 @@ function Listing({ user }) {
                 <hr className="solid" />
 
                 <div className="description">
-                  {listing.description}.
+                  <ReadMoreMore text={listing.description} checkFor={100} linesToShow={7} />
                 </div>
 
 

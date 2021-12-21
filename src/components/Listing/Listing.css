@@ -140,3 +140,78 @@
   font-size: 12px;
   font-weight: 200;
 }
+
+#root > div > div.listings-page-container > div > div.left-right-container > div.left-container > div.description > div > button {
+  color: #FF5A5F;
+}
+@media screen and (max-width: 480px)  and (max-width: 769px) { 
+  .my_info{
+  width: 100vw;
+  margin-top: 80px;
+  padding: 5px;
+  padding-top: 0px;
+  }
+
+  #root > div > div.listings-page-container > div > div.MuiBox-root{
+    width: 98vw;
+    height: 30vh;
+    border-radius: 8px;
+    padding: 10px !important;
+    margin-right: 0px !important;
+  }
+
+  .listings-page-container{
+    width: 100vw;
+
+  }
+
+  .left-right-container{
+    width: 84%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+
+  .left-container{
+    width: 93vw;
+  }
+  
+  .right-container{
+    width: 100vw !important;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+  }
+  .rating-section-item{
+    width: 100%;
+  }
+  #root > div > div.listings-page-container > div > div.left-right-container > div.right-container > div{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
+
+  .bar{
+    width: 120px;
+    margin-right: 5px;
+  }
+  .review-container{
+    display: flex;
+    flex-direction: column;
+    width: 99vw;
+    margin-bottom: 20px;
+    color: #484848;;
+  }
+
+  .rating-section{
+    width: 93vw;
+  }
+  
+  #listing-page-listing-name{
+    line-height: 32px !important;
+  }
+}
