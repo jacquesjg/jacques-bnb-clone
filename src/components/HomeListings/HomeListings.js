@@ -17,7 +17,7 @@ function HomeListings() {
             <div className="listing-container">
 
 
-              <img src={listing.picture_url} alt="listing preview" />
+              <img src={listing.picture_url} alt="listing preview" loading="lazy" />
 
 
               <div className="type-and-city-container">
@@ -59,7 +59,7 @@ function HomeListings() {
             <div className="listing-container">
 
 
-              <img src={listing.picture_url} alt="listing preview" />
+              <img src={listing.picture_url} alt="listing preview" loading="lazy" />
 
 
               <div className="type-and-city-container">
@@ -101,7 +101,7 @@ function HomeListings() {
             <div className="listing-container">
 
 
-              <img src={listing.picture_url} alt="listing preview" />
+              <img src={listing.picture_url} alt="listing preview" loading="lazy" />
 
 
               <div className="type-and-city-container">
@@ -143,7 +143,7 @@ function HomeListings() {
             <div className="listing-container">
 
 
-              <img src={listing.picture_url} alt="listing preview" />
+              <img src={listing.picture_url} alt="listing preview" loading="lazy" />
 
 
               <div className="type-and-city-container">
@@ -185,7 +185,7 @@ function HomeListings() {
             <div className="listing-container">
 
 
-              <img src={listing.picture_url} alt="listing preview" />
+              <img src={listing.picture_url} alt="listing preview" loading="lazy" />
 
 
               <div className="type-and-city-container">
