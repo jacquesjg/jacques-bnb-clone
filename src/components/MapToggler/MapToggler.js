@@ -49,7 +49,7 @@ function MapToggler() {
                   zIndex: "20",
                   backgroundColor: "black",
                   borderRadius: "20px",
-                  marginTop: "83vh",
+                  marginTop: "82vh",
                   marginLeft: "calc(50vw - 67.5px)",
                   position: "absolute",
                   top: 0,

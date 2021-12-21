@@ -39,12 +39,13 @@ export default function Demo({ setUser }) {
       });
     }
   }
-
+  const [email, setEmail] = useState('Demo@Demo.com');
+  const [password, setPassword] = useState('Doooooo@2');
 
   useEffect(() => {
-
-    var email1 = document.getElementById("email");
-    var password1 = document.getElementById("password");
+    // set id for each input in your render, and then get them.
+    const email1 = document.getElementById("email");
+    const password1 = document.getElementById("password");
     function wait(ms) {
       return new Promise(function (resolve) {
         setTimeout(resolve, ms);
