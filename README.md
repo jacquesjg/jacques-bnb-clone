@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+## LuxeBNB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Link](https://luxebnb.netlify.app)
 
-## Available Scripts
+Welcome to LuxeBNB- my single-page clone of Airbnb. My web-app includes many of the features that can be found on the real Airbnb, including the ability to search for over 75 listings in 5 different cities, view their exact location via the Google Maps API, and book, edit, or cancel a booking at any of these listings.
 
-In the project directory, you can run:
+![Splash Page]( "Splash Page")
 
-### `npm start`
+The search feature works by converting user input into latitudinal and longitudinal coordinates (via Google's Geocoding API), which is then used as the center for the Google Map displayed on the results page. Once this map is loaded, I use the latitudinal and longitudinal coordinates of the perimeter of the map to fetch any listings in my database that fall within this perimter.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Listings Page with Map]( "Listings Page with Map")
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I built the map feature using the Google Maps API and Google’s Geocoding API - to turn locations into coordinates. Listings will dynamically appear and disappear based on the user's interaction with the map.
 
-### `npm test`
+![Map Gif]( "Map Gif")
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Listings Page]( "Listings Page")
 
-### `npm run build`
+My listing show-page enables logged-in users to book a listing. Users can only book if another user has not already booked that date or any overlapping dates, and can only book for the number of guests that the listing allows for. I built my calendar feature using Airbnb's own calendar library, React-Dates.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Bookings Page]( "Bookings Page")
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Above, logged-in users can view their bookings as well as edit or cancel them. The edit-booking form pre-fills users' current reservation information for their reference when editing.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project was designed and built in under two weeks.
 
-### `npm run eject`
+![Mobile Responsiveness]( "Mobile Responsiveness")
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Site has been optimized for mobile phone use with various css breakpoints.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Technologies used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1.  Javascript
+2.  React
+3.  MongoDB
+4.  Express JS
+5.  Node JS
+6.  HTML
+7.  CSS
+8.  Heroku
+9.  Netlify
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Libraries used:
 
-## Learn More
+- React.js (incl. react-router-dom)
+- Axios
+- React-Dates - Airbnb engineering's calendar library
+- Google Map API, Google Places Autocomplete, Google Geocoding API
+- Bcrypt for user authorization
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Features:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Sign up & log in with username & password
+- Browse living spaces by location on Google Maps
+- Book living spaces
+- Edit bookings
+- Read user reviews
