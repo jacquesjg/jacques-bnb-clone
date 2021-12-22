@@ -21,77 +21,82 @@ function Map() {
 
 
   return (
-    <div className="map-container">
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        zoom={12}
-        center={destination === "" ? searchDestinationHandler({ lat: 40.730610, lng: -73.935242 }) : destination}
-      >
+    <div className="map-container-container">
+      <div className="map-container">
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          zoom={12}
+          center={destination === "" ? searchDestinationHandler({ lat: 40.730610, lng: -73.935242 }) : destination}
+        >
 
-        {allListings.map(listing => (
-          <Marker
-            key={listing.id}
-            position={{ lat: listing.latitude, lng: listing.longitude }}
-            onClick={() => setSelected({
-              lat: listing.latitude,
-              lng: listing.longitude,
-              id: listing.id,
-              picture_url: listing.picture_url,
-              property_type: listing.property_type,
-              neighbourhood_cleansed: listing.neighbourhood_cleansed,
-              name: listing.name,
-              price: listing.price,
-              review_scores_rating: listing.review_scores_rating,
+          {allListings.map(listing => (
+            <Marker
+              key={listing.id}
+              position={{ lat: listing.latitude, lng: listing.longitude }}
+              onClick={() => setSelected({
+                lat: listing.latitude,
+                lng: listing.longitude,
+                id: listing.id,
+                picture_url: listing.picture_url,
+                property_type: listing.property_type,
+                neighbourhood_cleansed: listing.neighbourhood_cleansed,
+                name: listing.name,
+                price: listing.price,
+                review_scores_rating: listing.review_scores_rating,
 
-            })}
-          />
-        ))}
+              })}
+            />
+          ))}
 
-        {selected ? (
-          <InfoWindow
-            position={{ lat: selected.lat, lng: selected.lng }}
-            onCloseClick={() => setSelected(null)}
-          >
-            <Link className='listing-link' to={`/listing/${selected.id}`} key={selected.id}>
-              <div className="listing-container" id={"map-listing"}>
-
-
-                <img src={selected.picture_url} alt="listing preview" />
+          {selected ? (
+            <InfoWindow
+              position={{ lat: selected.lat, lng: selected.lng }}
+              onCloseClick={() => setSelected(null)}
+            >
+              <Link className='listing-link' to={`/listing/${selected.id}`} key={selected.id}>
+                <div className="listing-container" id={"map-listing"}>
 
 
-                <div className="type-and-city-container" id={"map-listing"}>
-                  {selected.property_type} • {selected.neighbourhood_cleansed}
+                  <img src={selected.picture_url} alt="listing preview" />
+
+
+                  <div className="type-and-city-container" id={"map-listing"}>
+                    {selected.property_type} • {selected.neighbourhood_cleansed}
+                  </div>
+
+
+                  <div className='listing-name' id={"map-listing"}>
+                    {selected.name}
+                  </div>
+
+
+                  <div className="listing-price" id={"map-listing"}>
+                    {selected.price} per night
+                  </div>
+
+
+                  <div className="rating-container" id={"map-listing"}>
+                    <ReactStars
+                      size={14}
+                      value={typeof (selected.review_scores_rating) === "number" ? selected.review_scores_rating : 0}
+                      edit={false}
+                      isHalf={true}
+                    />
+                    <span className='rating-number'>{selected.review_scores_rating}</span>
+                  </div>
+
+
                 </div>
+              </Link>
+            </InfoWindow>
+          ) : null};
+
+        </GoogleMap>
 
 
-                <div className='listing-name' id={"map-listing"}>
-                  {selected.name}
-                </div>
+      </div >
 
-
-                <div className="listing-price" id={"map-listing"}>
-                  {selected.price} per night
-                </div>
-
-
-                <div className="rating-container" id={"map-listing"}>
-                  <ReactStars
-                    size={14}
-                    value={typeof (selected.review_scores_rating) === "number" ? selected.review_scores_rating : 0}
-                    edit={false}
-                    isHalf={true}
-                  />
-                  <span className='rating-number'>{selected.review_scores_rating}</span>
-                </div>
-
-
-              </div>
-            </Link>
-          </InfoWindow>
-        ) : null};
-
-      </GoogleMap>
-    </div >
+    </div>
   )
 }
 

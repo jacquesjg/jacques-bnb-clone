@@ -1,5 +1,5 @@
 .map-container{
-  height: calc(100vh - 80px);
+  height: 100vh;
   width: 39.5vw;
   position: fixed;
   left: 60vw;
@@ -9,20 +9,30 @@
 
 .map-container > div {
   border-radius: 10px;
-  height: calc(100vh - 80px);
+  height: 100vh;
 
 }
 
 
 @media screen and (max-width: 480px) { 
+  .map-container-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    
+  }
+  
   .map-container{
   width: 100vw;
+  height: 91%;
   left: 0;
-  top: 0,
+  top: 80;
+  overflow-y: visible;
   }
   .map-container > div {
     border-radius: 10px;
-    height: calc(100vh - 80px);
+    height: 100%;
   
   }
   #map-listing{
@@ -37,5 +47,10 @@
     width: 200px;
   }
 
-  
+
+  #root > div > div.map-container-container > div > div > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(4) > div > div > div > div > div {
+    padding-right: 12px;
+    padding-bottom: 12px;
+  }
+
 }

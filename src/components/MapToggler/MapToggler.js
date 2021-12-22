@@ -31,13 +31,13 @@ function MapToggler() {
                 position: "fixed",
                 height: "100vh",
                 width: "100vw",
-                top: 0,
+                top: 80,
                 left: 0,
                 bottom: 0,
                 right: 0,
                 // backgroundColor: 'black',
                 zIndex: "59",
-                overflowY: "scroll"
+                overflowY: "hidden",
 
               }}
             >
@@ -49,7 +49,7 @@ function MapToggler() {
                   zIndex: "20",
                   backgroundColor: "black",
                   borderRadius: "20px",
-                  marginTop: "82vh",
+                  marginTop: "60vh",
                   marginLeft: "calc(50vw - 67.5px)",
                   position: "absolute",
                   top: 0,
