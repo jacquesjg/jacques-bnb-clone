@@ -6,7 +6,7 @@ Welcome to LuxeBNB- my single-page "clone" of Airbnb. My web-app includes many o
 
 ![Splash Page](https://raw.githubusercontent.com/jacquesjg/jacques-bnb-clone/master/readMeScreeners/Screen%20Shot%202021-12-21%20at%207.30.29%20PM.png "Splash Page")
 
-The search feature works by converting user input into latitudinal and longitudinal coordinates (via Google's Geocoding API), which is then used as the center for the Google Map displayed on the results page. Once this map is loaded, I use the latitudinal and longitudinal coordinates of the perimeter of the map to fetch any listings in my database that fall within this perimter.
+The search feature works by converting user input into latitudinal and longitudinal coordinates (via Google's Geocoding API), which is then used as the center for the Google Map displayed on the results page. Once this map is loaded, I use the latitudinal and longitudinal coordinates of the perimeter of the map to fetch any listings in my database that fall within this perimeter.
 
 ![Listings Page with Map](https://raw.githubusercontent.com/jacquesjg/jacques-bnb-clone/master/readMeScreeners/Screen%20Shot%202021-12-21%20at%207.31.28%20PM.png "Listings Page with Map")
 
