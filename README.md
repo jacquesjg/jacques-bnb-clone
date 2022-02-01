@@ -1,7 +1,7 @@
 ## LuxeBNB
 
 [Live Link](https://luxebnb.netlify.app)
-
+[Backend Repository Link](https://github.com/jacquesjg/jacques-bnb-clone-backend)
 Welcome to LuxeBNB- my single-page "clone" of Airbnb. My web-app includes many of the features that can be found on the real Airbnb, including the ability to search for over 75 listings in 5 different cities, view their exact location via the Google Maps API, and book, edit, or cancel a booking at any of these listings. The listings are sourced through an AirBNB dataset, which I used to make a fetchable API.
 
 ![Splash Page](https://raw.githubusercontent.com/jacquesjg/jacques-bnb-clone/master/readMeScreeners/Screen%20Shot%202021-12-21%20at%207.30.29%20PM.png "Splash Page")
